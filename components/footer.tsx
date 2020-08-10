@@ -5,14 +5,15 @@ export default function Footer() {
       <style jsx>{`
         .flex {
           display: flex;
-          justify-content: space-between;
+          flex-direction: column;
+          justify-content: space-evenly;
           align-items: center;
           height: 10em;
         }
         .social-svg {
           fill: white;
-          width: 32px;
-          height: 32px;
+          width: 48px;
+          height: 48px;
         }
         a {
           margin: 0 0.5vw;
