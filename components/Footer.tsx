@@ -13,6 +13,7 @@ export default function Footer() {
           fill: white;
           width: 48px;
           height: 48px;
+          border-radius: 24px;
         }
         a {
           margin: 0 0.5vw;
@@ -24,8 +25,8 @@ export default function Footer() {
           color: var(--nc-ac-1);
         }
         svg:hover {
-          transition: border-radius 300ms;
-          border-radius: 5px;
+          transition: border-radius 200ms;
+          border-radius: 8px;
         }
       `}</style>
       <div className="container">
