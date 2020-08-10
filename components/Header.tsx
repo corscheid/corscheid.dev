@@ -1,5 +1,5 @@
-import Navigation from './navigation'
-import styles from './header.module.css'
+import Navigation from './Navigation'
+import styles from './Header.module.css'
 
 export default function Header() {
     const name = 'Corey Scheideman'
