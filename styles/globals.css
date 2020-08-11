@@ -138,9 +138,11 @@ h6 {
 }
 a {
   color: var(--nc-lk-1);
+  text-decoration: none;
 }
 a:hover {
   color: var(--nc-lk-2);
+  text-decoration: underline;
 }
 abbr:hover {
   cursor: help;
