@@ -363,7 +363,10 @@ img {
 
 main {
   min-height: calc(100vh - 250px);
-  padding: 0px 1rem;
+}
+
+main h1 {
+  margin-bottom: 2rem;
 }
 
 footer {
