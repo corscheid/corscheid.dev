@@ -11,7 +11,7 @@ export default function Home() {
       }
       `}</style>
       <div className="big-text">
-        &#123; &#125; &#60;&#47;&#62;
+        &#60; &#47;&#62; &#123; &#125;
       </div>
       <p>
         Hi, I'm Corey and I'm a recent graduate with a Bachelor's Degree in Computer Science looking to start my career
