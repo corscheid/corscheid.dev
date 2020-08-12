@@ -24,7 +24,7 @@ export default function Home() {
       </p>
       <p>
         A lot of the development I have done thus far has been for the <a href="https://LearnNavi.org/">LearnNa'vi</a> Community
-		using the alias "Tirea Aean" (Na'vi for <em>Blue Spirit'</em>) or "tirea" (<em>spirit</em>). Learning
+		using the alias "Tirea Aean" (Na'vi for <em>'Blue Spirit'</em>) or "tirea" (<em>spirit</em>). Learning
         and teaching the Na'vi language from James Cameron's AVATAR has been a fun hobby for me since January 2010. It
         was also how I found my way towards choosing to become a Software Engineer as my career goal.
       </p>
