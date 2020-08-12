@@ -7,7 +7,9 @@ export default function Navigation() {
         <a>Home</a>
       </Link>
       {' / '}
-      <a>Blog</a>
+      <Link href="/blog">
+        <a>Blog</a>
+      </Link>
       {' / '}
       <a>Projects</a>
       {' / '}
