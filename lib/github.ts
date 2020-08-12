@@ -16,5 +16,6 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
     const response = await fetch('https://api.github.com/users/corscheid/repos')
     repositories = await response.json()
   }
+  // TODO: sort by date descending
   return repositories
 }
