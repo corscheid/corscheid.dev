@@ -20,6 +20,8 @@ function compareProjDates(a: GitHubRepository, b: GitHubRepository): number {
 
 export async function getRepositories(): Promise<GitHubRepository[]> {
   let repositories: GitHubRepository[];
+  const exclude = ['corscheid.github.io']
+
   if (fs.existsSync('projects.json')) {
     const json = await fs.promises.readFile('./projects.json', 'utf8');
     repositories = JSON.parse(json);
@@ -27,6 +29,7 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
     const response = await fetch('https://api.github.com/users/corscheid/repos')
     repositories = await response.json()
   }
-  // TODO: sort by date descending
-  return repositories.sort((a, b) => compareProjDates(a, b))
+  return repositories
+    .filter(repository => !exclude.includes(repository.name))
+    .sort((a, b) => compareProjDates(a, b))
 }
