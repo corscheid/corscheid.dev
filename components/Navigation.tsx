@@ -18,6 +18,9 @@ export default function Navigation() {
   return (
     <nav>
       <style jsx>{`
+        .nav-item {
+          display: inline;
+        }
         .nav-link {
           font-size: 18px;
         }
@@ -31,14 +34,14 @@ export default function Navigation() {
         }
       `}</style>
       {links.map(({ name, dest }) => (
-        <>
+        <div className='nav-item' key={name}>
           <Link href={dest}>
             <a className={(pathname === dest || name === 'Blog' && pathname.includes(dest)) ? 'active nav-link' : 'nav-link'}>
               {name}
             </a>
           </Link>
           {name !== 'Contact' ? ' / ' : null}
-        </>
+        </div>
       ))}
     </nav>
   )
