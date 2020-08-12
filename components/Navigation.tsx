@@ -21,6 +21,10 @@ export default function Navigation() {
         .nav-link {
           font-size: 18px;
         }
+        .nav-link:hover {
+          text-decoration: none;
+          border-bottom: 2px solid;
+        }
         .active {
           font-weight: bold;
           border-bottom: 2px solid;
