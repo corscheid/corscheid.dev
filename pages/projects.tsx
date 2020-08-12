@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard'
 export default function Projects({ projects }: { projects: GitHubRepository[] }) {
   return (
     <Layout title="Projects">
+      <h1>Projects</h1>
       {projects.map((project) => (
         <ProjectCard repository={project} />
       ))}
