@@ -18,14 +18,8 @@ export default function ProjectCard({ repository }: { repository: GitHubReposito
         .proj-date {
           font-size: 0.8em;
         }
-        .visual {
-          height: 100px;
-          width: 100%;
-          background: wheat;
-          margin: 0.5rem 0;
-        }
       `}</style>
-      <div className="project-card" key={name}>
+      <div className="project-card">
         <div className="card-header">
           <h2><a href={html_url}>{name}</a></h2>
           <time className="proj-date" dateTime={created_at} itemProp="created_at">
@@ -33,10 +27,7 @@ export default function ProjectCard({ repository }: { repository: GitHubReposito
           </time>
         </div>
         <div className="description" itemProp="description">{description}</div>
-        {/* <img className="visual" src="" alt="" /> */}
       </div>
     </>
   )
 }
-
-// TODO: Add Card Grid CSS, maybe some images
