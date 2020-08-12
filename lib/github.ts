@@ -28,7 +28,7 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
   } else {
     const response = await fetch('https://api.github.com/users/corscheid/repos')
     repositories = await response.json()
-    await fs.promises.writeFile('./projects.json', 'utf-8')
+    await fs.promises.writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
   return repositories
     .filter(repository => !exclude.includes(repository.name))
