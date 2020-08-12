@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "name": "corscheid.dev",
+  "version": "1.0.0",
+  "repository": "https://github.com/corscheid/corscheid.dev",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
