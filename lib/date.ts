@@ -3,7 +3,7 @@ export function formatDate(dateString: string): string {
     const year = postDate.getFullYear();
     const month = postDate.getMonth() + 1 < 10
         ? '0' + (postDate.getMonth() + 1)
-        : postDate.getMonth();
+        : postDate.getMonth() + 1;
     const day = postDate.getDate();
     return `${year}-${month}-${day}`;
 }
