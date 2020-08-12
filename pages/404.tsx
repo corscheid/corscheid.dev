@@ -1,7 +1,7 @@
 export default function Custom404() {
   return (
-    <pre>
-      {`
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <pre style={{ fontSize: '1.5rem' }}>{`
  ____________________________________
 < 404 | This page could not be found >
  ------------------------------------
@@ -10,7 +10,7 @@ export default function Custom404() {
             (__)\\       )\\/\\
                 ||----w |
                 ||     ||
-`}
-    </pre>
+      `}</pre>
+    </div>
   )
 }
