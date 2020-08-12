@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/corscheid
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://corscheid.dev
+  * I am corscheid (https://keybase.io/corscheid) on keybase.
+  * I have a public key with fingerprint C8D9 9966 252D 5607 740C  F838 2BCD B857 C3E4 BA96
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120eebd129027546902115e825968e6de3af8b0508cbbb2ab8dfd76dd722a2ced970a",
+      "fingerprint": "c8d99966252d5607740cf8382bcdb857c3e4ba96",
+      "host": "keybase.io",
+      "key_id": "2bcdb857c3e4ba96",
+      "kid": "0101167600c96d7eec3dc4776d049601a73179360559196aae675f830e2a5db082030a",
+      "uid": "65bde88570a13359bbb484dcecda7019",
+      "username": "corscheid"
+    },
+    "service": {
+      "hostname": "corscheid.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1597219875,
+  "expire_in": 157680000,
+  "prev": "0e7076e2e934dd7f53fbfa2b93fb43d8c90dbe4fe1dadc4ce67ef8dc7492bff3",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMNrAnicbVJtUFRVGF4SUHbECJMPjYqLlo3Leu73vUD9kJmGIcWBpmAMXO+951x2
+BXdxd/lYGCeYaaHE0TGglo8ZApkmkZwJmAICEiFzIAxjaEIoRkQHZzMWWkujpHOZ
+/NN0/rxz3vs8z/u8zz0joRt0+oA94z2Zwwt9HwSMDTUU6kx0W1wZIdugi0goI/LQ
+ekH5EDmcpjwLJBIIQFIAIRmSlAgonmU4XEiSRQLFipyAOIhoSRVkwAJBkWWZkmQB
+qpDnIOQpSqIUBEUeSISBUC3WXGQvsFusTiyrCFAURY6jWAqyHOB5BiiqQAuUrEBZ
+YHmFRowsiRwmmm0OjYHNyZIDGS023MMX07q9/8E/9g1IkuM5ABSRgzxCCg0VhsfG
+ACNygJR4muRFmgMsK5IiJ0mI41nsACBKYqEMBArQ674L1+U4VoZIwIOARNI0K+JV
+GYGBClKgxANS1IAOZLdKx5C2nc3uUMwIM08YCNwusihIS1Zb5b8QI0RFmF1gtzlt
+ii0ffzI7nQWOBI3qdBVo2GIkm/5VMckWK8RJYkYRsjssNiuRQGKk4rRosiQr8hQp
+CjxrIFBJgcWOTBYNwfKcAPDR5uBxOB7EA55DFBJpBv8qlaVVWZUoWcSVoaGgiADK
+iFERCSWcm4LTQaoAFZ4RKVlVaULb67jVhrWxqFPKxZoOS65VchbaEXHi8lB2oC5A
+rwsOekJ7Yjp9SNjjhxd+KkxXXrEpvj3mVH7/chttP7+qv32jrdjaQt/xRF4LPt8V
+Ik9Md5eav85Ab/tW/c8t3nv3zEJ2/Z6YKfnv9oHoxI/+/LJG3DG3lFYqna66fy52
+C9B90gXOxvh2nt6XUL9LmR3vn392gH65M5yqXTrjqa6Lq6m/7in/Jfry+wN8Y9yF
+u/zIkYPfrqTtjTLHThNd+4dTJxvKuZsbw5RSOqvxrzfqxg5NjQrQH/7Ob8aUvPd2
+rW2t2xy1ENTANDXurXjSWPv6wKxQcj3ysyS+NdS11Vo5Pz1XZHj6wDe9t/d7W553
+VXtTNn+4rW9oX1CEvznRJM242zM8FQNrn3rnIr6bb4o/OXE1s5/p9hn87vifUU+p
+viLUt7g9vXziqQcR3duz2s4tG3eUWssKa8ymQy/OFl9duJKalJ/5cVN11sz4C4/s
+dek/HTwSvDzf+2tObWLUUVPyDznh115pyQxLPLw2t1p1Mbjs4bbwrzruObz3N7QG
+jHTXR785Wrd5+NUk2R1Y4m4KnC6Ju5WylKzzP+rIIeJ/TzU+k/zSgUtbvo8o8XYc
+NR1L391RteKoXjnsfuj35ITs/mOwJWP0RvHNnWG+zh99F8pnh3E/crDPODN4V39n
+6q1OV2DPg0tZJ8Uxw3TsWKyxcnHjxbLP1yYrml2t3JL/iveL5sqkyeJb6vHe19Ii
+PLObWtzZoRP/ABliy/M=
+=uu2M
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/corscheid
+
+==================================================================
