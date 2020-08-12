@@ -33,7 +33,7 @@ export default function Navigation() {
       {links.map(({ name, dest }) => (
         <>
           <Link href={dest}>
-            <a className={pathname === dest ? 'active nav-link' : 'nav-link'}>
+            <a className={(pathname === dest || name === 'Blog' && pathname.includes(dest)) ? 'active nav-link' : 'nav-link'}>
               {name}
             </a>
           </Link>
