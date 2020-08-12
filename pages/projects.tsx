@@ -15,7 +15,7 @@ export default function Projects({ projects }: { projects: GitHubRepository[] })
           }
         `}</style>
         {projects.map((project) => (
-          <ProjectCard repository={project} />
+          <ProjectCard repository={project} key={project.name} />
         ))}
 
       </div>
