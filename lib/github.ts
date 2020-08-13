@@ -20,7 +20,7 @@ function compareProjDates(a: GitHubRepository, b: GitHubRepository): number {
 
 export async function getRepositories(): Promise<GitHubRepository[]> {
   let repositories: GitHubRepository[];
-  const exclude = ['corscheid.github.io']
+  const exclude = ['corscheid.github.io', 'nextjs-blog']
 
   if (fs.existsSync('projects.json')) {
     const json = await fs.promises.readFile('./projects.json', 'utf8')
