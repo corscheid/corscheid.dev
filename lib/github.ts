@@ -26,9 +26,9 @@ async function fetchFromGitHub(endpoint: string, user: string, excludeList: stri
 
 export async function getRepositories(): Promise<GitHubRepository[]> {
   let repositories: GitHubRepository[]
-  let repos_corscheid: GitHubRepository[]
-  let repos_tirea: GitHubRepository[]
-  let repos_fwew: GitHubRepository[]
+  let corscheidRepos: GitHubRepository[]
+  let tireaRepos: GitHubRepository[]
+  let fwewOrgRepos: GitHubRepository[]
 
   const exclude = {
     corscheid: ['corscheid.github.io', 'fwew', 'fwew-api', 'fwew-react', 'nextjs-blog', 'php-sqlite-login'],
@@ -42,14 +42,14 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
   } else {
     repositories = []
 
-    repos_corscheid = await fetchFromGitHub('users', 'corscheid', exclude.corscheid)
-    repos_corscheid.forEach(repo => { repositories.push(repo) })
+    corscheidRepos = await fetchFromGitHub('users', 'corscheid', exclude.corscheid)
+    corscheidRepos.forEach(repo => { repositories.push(repo) })
 
-    repos_tirea = await fetchFromGitHub('users', 'tirea', exclude.tirea)
-    repos_tirea.forEach(repo => { repositories.push(repo) })
+    tireaRepos = await fetchFromGitHub('users', 'tirea', exclude.tirea)
+    tireaRepos.forEach(repo => { repositories.push(repo) })
 
-    repos_fwew = await fetchFromGitHub('orgs', 'fwew', [])
-    repos_fwew.forEach(repo => { repositories.push(repo) })
+    fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', [])
+    fwewOrgRepos.forEach(repo => { repositories.push(repo) })
 
     await fs.promises.writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
