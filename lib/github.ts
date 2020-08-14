@@ -1,10 +1,10 @@
 import fs from 'fs'
 
 export interface GitHubRepository {
-  html_url: string;
-  name: string;
-  description: string;
-  created_at: string;
+  html_url: string
+  name: string
+  description: string
+  created_at: string
 }
 
 function compareProjDates(a: GitHubRepository, b: GitHubRepository): number {
@@ -16,6 +16,12 @@ function compareProjDates(a: GitHubRepository, b: GitHubRepository): number {
   } else {
     return 1
   }
+}
+
+async function fetchFromGitHub(endpoint: string, user: string, excludeList: string[]): Promise<GitHubRepository[]> {
+  const response = await fetch(`https://api.github.com/${endpoint}/${user}/repos`)
+  const repositories: GitHubRepository[] = await response.json()
+  return repositories.filter(repository => !excludeList.includes(repository.name))
 }
 
 export async function getRepositories(): Promise<GitHubRepository[]> {
@@ -36,23 +42,14 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
   } else {
     repositories = []
 
-    const res_corscheid = await fetch('https://api.github.com/users/corscheid/repos')
-    repos_corscheid = await res_corscheid.json()
-    repos_corscheid
-      .filter(repository => !exclude.corscheid.includes(repository.name))
-      .forEach(repo => { repositories.push(repo) })
+    repos_corscheid = await fetchFromGitHub('users', 'corscheid', exclude.corscheid)
+    repos_corscheid.forEach(repo => { repositories.push(repo) })
 
-    const res_tirea = await fetch('https://api.github.com/users/tirea/repos')
-    repos_tirea = await res_tirea.json()
-    repos_tirea
-      .filter(repository => !exclude.tirea.includes(repository.name))
-      .forEach(repo => { repositories.push(repo) })
+    repos_tirea = await fetchFromGitHub('users', 'tirea', exclude.tirea)
+    repos_tirea.forEach(repo => { repositories.push(repo) })
 
-    const res_fwew = await fetch('https://api.github.com/orgs/fwew/repos')
-    repos_fwew = await res_fwew.json()
-    repos_fwew
-      // .filter(repository => !exclude.fwew.includes(repository.name))
-      .forEach(repo => { repositories.push(repo) })
+    repos_fwew = await fetchFromGitHub('orgs', 'fwew', [])
+    repos_fwew.forEach(repo => { repositories.push(repo) })
 
     await fs.promises.writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
