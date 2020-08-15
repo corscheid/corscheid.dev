@@ -1,4 +1,5 @@
-import fs from 'fs'
+import { existsSync, promises } from 'fs'
+const { writeFile, readFile } = promises
 
 export interface GitHubRepository {
   html_url: string
@@ -7,7 +8,7 @@ export interface GitHubRepository {
   created_at: string
 }
 
-function compareProjDates(a: GitHubRepository, b: GitHubRepository): number {
+function compareProjectDates(a: GitHubRepository, b: GitHubRepository): number {
   const aDate = new Date(a.created_at)
   const bDate = new Date(b.created_at)
   // sort descending
@@ -36,8 +37,8 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
     // fwew: [],
   }
 
-  if (fs.existsSync('projects.json')) {
-    const json = await fs.promises.readFile('./projects.json', 'utf8')
+  if (existsSync('projects.json')) {
+    const json = await readFile('./projects.json', 'utf8')
     repositories = JSON.parse(json)
   } else {
     repositories = []
@@ -51,7 +52,7 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
     fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', [])
     fwewOrgRepos.forEach(repo => { repositories.push(repo) })
 
-    await fs.promises.writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
+    await writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
-  return repositories.sort((a, b) => compareProjDates(a, b))
+  return repositories.sort((a, b) => compareProjectDates(a, b))
 }
