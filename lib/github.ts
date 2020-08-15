@@ -13,7 +13,7 @@ function getImageURL(repo: GitHubRepository): string {
   if (existsSync(`public/images/${repo.name}.png`)) {
     return `/images/${repo.name}.png`
   }
-  return `https://dummyimage.com/640x360/282C34/eee/?text=${repo.name}`
+  return `https://dummyimage.com/1188x792/282C34/eee/?text=${repo.name}`
 }
 
 function compareProjectDates(a: GitHubRepository, b: GitHubRepository): number {
