@@ -69,7 +69,7 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
       repositories.push(repo)
     })
 
-    // await writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
+    await writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
   return repositories.sort((a, b) => compareProjectDates(a, b))
 }
