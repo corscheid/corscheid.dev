@@ -6,6 +6,14 @@ export interface GitHubRepository {
   name: string
   description: string
   created_at: string
+  image_url: string
+}
+
+function getImageURL(repo: GitHubRepository): string {
+  if (existsSync(`public/images/${repo.name}.png`)) {
+    return `/images/${repo.name}.png`
+  }
+  return `https://dummyimage.com/640x360/282C34/eee/?text=${repo.name}`
 }
 
 function compareProjectDates(a: GitHubRepository, b: GitHubRepository): number {
@@ -44,15 +52,24 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
     repositories = []
 
     corscheidRepos = await fetchFromGitHub('users', 'corscheid', exclude.corscheid)
-    corscheidRepos.forEach(repo => { repositories.push(repo) })
+    corscheidRepos.forEach(repo => {
+      repo.image_url = getImageURL(repo)
+      repositories.push(repo)
+    })
 
     tireaRepos = await fetchFromGitHub('users', 'tirea', exclude.tirea)
-    tireaRepos.forEach(repo => { repositories.push(repo) })
+    tireaRepos.forEach(repo => {
+      repo.image_url = getImageURL(repo)
+      repositories.push(repo)
+    })
 
     fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', [])
-    fwewOrgRepos.forEach(repo => { repositories.push(repo) })
+    fwewOrgRepos.forEach(repo => {
+      repo.image_url = getImageURL(repo)
+      repositories.push(repo)
+    })
 
-    await writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
+    // await writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
   return repositories.sort((a, b) => compareProjectDates(a, b))
 }
