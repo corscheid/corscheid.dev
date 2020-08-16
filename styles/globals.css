@@ -360,7 +360,7 @@ img {
 /* Custom */
 body,
 .container {
-  max-width: 825px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
@@ -371,6 +371,7 @@ main {
 
 main h1 {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 footer {

@@ -49,6 +49,7 @@ export default function Post(props: PostProps) {
           .article-date {
             fontSize: 1em;
             margin-bottom: 2rem;
+            text-align: center;
           } 
         `}</style>
         <div className="article-header">
