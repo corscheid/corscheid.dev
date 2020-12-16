@@ -40,8 +40,31 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
   let fwewOrgRepos: GitHubRepository[]
 
   const exclude = {
-    corscheid: ['corscheid.github.io', 'fwew', 'fwew-api', 'fwew-react', 'nextjs-blog', 'php-sqlite-login'],
-    tirea: ['fwew', 'fwew-discord', 'LearnNavi', 'Naviteri-HTML', 'navi-sentence-generator', 'ralpengyu', 'Tree-of-Voices-Online'],
+    corscheid: [
+      'corscheid.github.io',
+      'fwew',
+      'fwew-api',
+      'fwew-react',
+      'nextjs-blog',
+      'php-sqlite-login'
+    ],
+    tirea: [
+      'Horen',
+      'fwew',
+      'fwew-discord',
+      'LearnNavi',
+      'Naviteri-HTML',
+      'navi-sentence-generator',
+      'ralpengyu',
+      'Tree-of-Voices-Online',
+      'canon',
+      'dict-navi-discord',
+      'tr-material',
+      'tirea-learnnavi-org',
+      'ln-forum-js',
+      'vrrtepcli',
+      'VrrtepIRC'
+    ],
     // fwew: [],
   }
 
