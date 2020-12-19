@@ -374,6 +374,17 @@ main h1 {
   text-align: center;
 }
 
+.social-svg {
+  fill: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+}
+svg:hover {
+  transition: border-radius 200ms;
+  border-radius: 8px;
+}
+
 footer {
   background: var(--nc-bg-2);
   border-top: 1px solid var(--nc-bg-3);
