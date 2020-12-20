@@ -31,7 +31,7 @@ export default function Home() {
       <p>
         Some of my favorite technologies to work with these days are <a href="https://reactjs.org/">React.js</a>,&nbsp;
         <a href="https://reactnative.dev/">React Native</a>, <a href="https://developer.android.com/">Android</a>,&nbsp;
-        <a href="https://golang.org/">Go</a>, and <a href="https://www.python.org/">Python</a>.
+        <a href="https://golang.org/">Golang</a>, and <a href="https://www.python.org/">Python</a>.
       </p>
     </Layout>
   )
