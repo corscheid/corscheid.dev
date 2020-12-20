@@ -8,6 +8,8 @@ export default function Header() {
     <header className={styles.header}>
       <img
         src='/images/profile.jpg'
+        width={96}
+        height={96}
         className={`${styles.headerImage} ${styles.borderCircle}`}
         alt={name}
       />
