@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 
 export default function Header() {
   const name = 'Corey Scheideman'
-  const tagline = 'Homemade Dev'
+  const tagline = 'Homebrewed Dev'
   return (
     <header className={styles.header}>
       <img
