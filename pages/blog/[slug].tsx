@@ -1,11 +1,20 @@
 // Code from https://github.com/styfle/styfle.dev adapted with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/%5Bslug%5D.tsx
 import Link from 'next/link';
+import { useEffect } from 'react';
+import hljs from 'highlight.js';
+import typescript from 'highlight.js/lib/languages/typescript';
+import scss from 'highlight.js/lib/languages/scss';
+import shell from 'highlight.js/lib/languages/shell';
 
 import Layout from '../../components/Layout';
 import { getPosts } from '../../lib/posts';
 import { formatDate } from '../../lib/date';
 import { markdownToHtml } from '../../lib/markdown';
+
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('scss', scss);
+hljs.registerLanguage('shell', shell);
 
 interface PostProps {
   slug: string;
@@ -39,6 +48,7 @@ export async function getStaticProps({
 
 export default function Post(props: PostProps) {
   const { slug, title, date, html } = props;
+  useEffect(() => { hljs.initHighlighting(); }, [])
   return (
     <Layout title={title}>
       <article>
