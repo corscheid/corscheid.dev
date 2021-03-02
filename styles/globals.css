@@ -374,6 +374,13 @@ main h1 {
   text-align: center;
 }
 
+main article .main-content ul {
+  padding-left: 0;
+}
+main article .main-content ul li ul {
+  padding-left: 2rem;
+}
+
 .social-svg {
   fill: white;
   width: 48px;
