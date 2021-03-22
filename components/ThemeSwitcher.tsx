@@ -52,10 +52,11 @@ export default function ThemeSwitcher() {
             --nc-ac-tx: #ffffff;
         }
         #theme-toggle {
+          display: inline;
           padding: 0.25em;
-          margin: 0 auto 0 0;
-          border: 1px solid var(--nc-tx-1);
-          border-radius: 0.5em;
+          margin: 0;
+          padding: 0;
+          color: var(--nc-lk-1);
           cursor: pointer;
           -webkit-touch-callout: none;
           -webkit-user-select: none;
@@ -67,6 +68,7 @@ export default function ThemeSwitcher() {
         }
         #theme-toggle i {
           padding: 0.25em;
+          padding-left: 0;
         }
         * {
           transition: background-color 0.5s, color 0.5s, border-color 0.5s;
@@ -74,7 +76,7 @@ export default function ThemeSwitcher() {
       `}</style>
       <div id="theme-toggle" onClick={switchTheme}>
         <i className={iconClassName}></i>
-        Switch Theme
+        Theme ({theme})
       </div>
     </>
   )
