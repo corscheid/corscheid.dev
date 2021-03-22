@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { NavItem } from '../interfaces'
 import styles from './Navigation.module.css'
 import { useRouter } from 'next/router'
+import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Navigation(): JSX.Element {
   const { pathname } = useRouter()
@@ -31,6 +32,10 @@ export default function Navigation(): JSX.Element {
           {name !== CONTACT ? ' / ' : null}
         </div>
       ))}
+      {' / '}
+      <div className='nav-item'>
+        <ThemeSwitcher />
+      </div>
     </nav>
   )
 }
