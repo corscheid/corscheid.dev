@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import ThemeSwitcher from './ThemeSwitcher'
 
 interface NavItem {
   name: string
@@ -43,6 +44,10 @@ export default function Navigation() {
           {name !== 'Contact' ? ' / ' : null}
         </div>
       ))}
+      {' / '}
+      <div className='nav-item'>
+        <ThemeSwitcher />
+      </div>
     </nav>
   )
 }
