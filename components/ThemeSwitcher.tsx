@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 
 export default function ThemeSwitcher() {
 
+  // TODO: Fix behavior when switching themes between switching pages
   const [theme, setTheme] = useState("")
   const [iconClassName, setIconClassName] = useState("")
 
   useEffect(() => {
     const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
     setTheme(isDark ? "dark" : "light")
-    setIconClassName(isDark ? "far fa-moon" : "fas fa-sun")
+    setIconClassName(isDark ? "fas fa-moon" : "far fa-sun")
   }, [])
 
   const switchTheme = () => {
@@ -52,10 +53,7 @@ export default function ThemeSwitcher() {
             --nc-ac-tx: #ffffff;
         }
         #theme-toggle {
-          display: inline;
-          padding: 0.25em;
-          margin: 0;
-          padding: 0;
+          width: 4.5em;
           color: var(--nc-lk-1);
           cursor: pointer;
           -webkit-touch-callout: none;
@@ -70,13 +68,10 @@ export default function ThemeSwitcher() {
           padding: 0.25em;
           padding-left: 0;
         }
-        * {
-          transition: background-color 0.5s, color 0.5s, border-color 0.5s;
-        }
       `}</style>
       <div id="theme-toggle" onClick={switchTheme}>
         <i className={iconClassName}></i>
-        Theme ({theme})
+        Theme
       </div>
     </>
   )
