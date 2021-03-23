@@ -1,5 +1,6 @@
 import Navigation from './Navigation'
 import styles from './Header.module.css'
+import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Header() {
   const name = 'Corey Scheideman'
@@ -17,6 +18,7 @@ export default function Header() {
         <h1 className={styles.name}>{name}</h1>
         <small>{tagline}</small>
         <Navigation />
+        <ThemeSwitcher />
       </div>
     </header>
   )
