@@ -1,16 +1,16 @@
 // Code from https://github.com/styfle/styfle.dev adapted with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/index.tsx
-import Link from 'next/link';
-import marked from 'marked';
+import Link from 'next/link'
+import marked from 'marked'
 
-import Layout from '../../components/Layout';
-import { getPosts, BlogPost } from '../../lib/posts';
-import { formatDate } from '../../lib/date';
+import Layout from '../../components/Layout'
+import { getPosts, BlogPost } from '../../lib/posts'
+import { formatDate } from '../../lib/date'
 
 export async function getStaticProps() {
-  const posts = await getPosts();
-  const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date));
-  return { props: { posts: sortedPosts } };
+  const posts = await getPosts()
+  const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date))
+  return { props: { posts: sortedPosts } }
 }
 
 export default function Blog({ posts }: { posts: BlogPost[] }) {
@@ -25,7 +25,11 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             </Link>
           </h2>
           <p className="post-meta">
-            <time className="dt-published" dateTime={date} itemProp="datePublished">
+            <time
+              className="dt-published"
+              dateTime={date}
+              itemProp="datePublished"
+            >
               {formatDate(date)}
             </time>
           </p>
@@ -41,5 +45,5 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
         </article>
       ))}
     </Layout>
-  );
+  )
 }

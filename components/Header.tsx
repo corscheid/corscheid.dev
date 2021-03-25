@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <img
-        src='/images/profile.jpg'
+        src="/images/profile.jpg"
         width={96}
         height={96}
         className={`${styles.headerImage} ${styles.borderCircle}`}
