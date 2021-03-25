@@ -65,7 +65,7 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
       'vrrtepcli',
       'VrrtepIRC'
     ],
-    // fwew: [],
+    fwew: [],
   }
 
   if (existsSync('projects.json')) {
@@ -77,22 +77,27 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
     corscheidRepos = await fetchFromGitHub('users', 'corscheid', exclude.corscheid)
     corscheidRepos.forEach(repo => {
       repo.image_url = getImageURL(repo)
-      repositories.push(repo)
+      const { html_url, name, created_at, image_url, description } = repo
+      repositories.push({ html_url, name, created_at, image_url, description })
     })
 
     tireaRepos = await fetchFromGitHub('users', 'tirea', exclude.tirea)
     tireaRepos.forEach(repo => {
       repo.image_url = getImageURL(repo)
-      repositories.push(repo)
+      const { html_url, name, created_at, image_url, description } = repo
+      repositories.push({ html_url, name, created_at, image_url, description })
     })
 
-    fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', [])
+    fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', exclude.fwew)
     fwewOrgRepos.forEach(repo => {
       repo.image_url = getImageURL(repo)
-      repositories.push(repo)
+      const { html_url, name, created_at, image_url, description } = repo
+      repositories.push({ html_url, name, created_at, image_url, description })
     })
+
+    repositories = repositories.sort((a, b) => compareProjectDates(a, b))
 
     await writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
-  return repositories.sort((a, b) => compareProjectDates(a, b))
+  return repositories
 }
