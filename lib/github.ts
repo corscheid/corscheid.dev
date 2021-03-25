@@ -27,10 +27,18 @@ function compareProjectDates(a: GitHubRepository, b: GitHubRepository): number {
   }
 }
 
-async function fetchFromGitHub(endpoint: string, user: string, excludeList: string[]): Promise<GitHubRepository[]> {
-  const response = await fetch(`https://api.github.com/${endpoint}/${user}/repos`)
+async function fetchFromGitHub(
+  endpoint: string,
+  user: string,
+  excludeList: string[]
+): Promise<GitHubRepository[]> {
+  const response = await fetch(
+    `https://api.github.com/${endpoint}/${user}/repos`
+  )
   const repositories: GitHubRepository[] = await response.json()
-  return repositories.filter(repository => !excludeList.includes(repository.name))
+  return repositories.filter(
+    repository => !excludeList.includes(repository.name)
+  )
 }
 
 export async function getRepositories(): Promise<GitHubRepository[]> {
@@ -65,7 +73,7 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
       'vrrtepcli',
       'VrrtepIRC'
     ],
-    // fwew: [],
+    fwew: []
   }
 
   if (existsSync('projects.json')) {
@@ -74,25 +82,34 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
   } else {
     repositories = []
 
-    corscheidRepos = await fetchFromGitHub('users', 'corscheid', exclude.corscheid)
+    corscheidRepos = await fetchFromGitHub(
+      'users',
+      'corscheid',
+      exclude.corscheid
+    )
     corscheidRepos.forEach(repo => {
       repo.image_url = getImageURL(repo)
-      repositories.push(repo)
+      const { html_url, name, created_at, image_url, description } = repo
+      repositories.push({ html_url, name, created_at, image_url, description })
     })
 
     tireaRepos = await fetchFromGitHub('users', 'tirea', exclude.tirea)
     tireaRepos.forEach(repo => {
       repo.image_url = getImageURL(repo)
-      repositories.push(repo)
+      const { html_url, name, created_at, image_url, description } = repo
+      repositories.push({ html_url, name, created_at, image_url, description })
     })
 
-    fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', [])
+    fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', exclude.fwew)
     fwewOrgRepos.forEach(repo => {
       repo.image_url = getImageURL(repo)
-      repositories.push(repo)
+      const { html_url, name, created_at, image_url, description } = repo
+      repositories.push({ html_url, name, created_at, image_url, description })
     })
+
+    repositories = repositories.sort((a, b) => compareProjectDates(a, b))
 
     await writeFile('./projects.json', JSON.stringify(repositories), 'utf-8')
   }
-  return repositories.sort((a, b) => compareProjectDates(a, b))
+  return repositories
 }

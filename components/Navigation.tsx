@@ -14,7 +14,7 @@ const links: NavItem[] = [
 ]
 
 export default function Navigation() {
-  const { pathname } = useRouter();
+  const { pathname } = useRouter()
   return (
     <nav>
       <style jsx>{`
@@ -34,9 +34,16 @@ export default function Navigation() {
         }
       `}</style>
       {links.map(({ name, dest }) => (
-        <div className='nav-item' key={name}>
+        <div className="nav-item" key={name}>
           <Link href={dest}>
-            <a className={(pathname === dest || name === 'Blog' && pathname.includes(dest)) ? 'active nav-link' : 'nav-link'}>
+            <a
+              className={
+                pathname === dest ||
+                (name === 'Blog' && pathname.includes(dest))
+                  ? 'active nav-link'
+                  : 'nav-link'
+              }
+            >
               {name}
             </a>
           </Link>
