@@ -16,7 +16,7 @@ export default function Layout({ title, children }: Props) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="Description"
-          content="I'm Corey Scheideman and I'm a recent graduate with a Bachelor's Degree in Computer Science looking to start my career in the Saint Louis, Missouri area."
+          content="Hi, I'm Corey and I'm a Junior Full Stack Web Developer in the Saint Louis, Missouri area."
         />
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
