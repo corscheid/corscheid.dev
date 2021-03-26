@@ -5,16 +5,15 @@ export default function Home() {
     <Layout title="Home">
       <style jsx>{`
         .big-text {
-          font-size: 4rem;
+          font-size: 2.25rem;
           text-align: center;
           margin-bottom: 2rem;
         }
       `}</style>
       <div className="big-text">&#60; &#47;&#62; &#123; &#125;</div>
       <p>
-        Hi, I'm Corey and I'm a recent graduate with a Bachelor's Degree in
-        Computer Science looking to start my career in the Saint Louis, Missouri
-        area.
+        Hi, I'm Corey and I'm a Junior Full Stack Web Developer in the Saint
+        Louis, Missouri area.
       </p>
       <p>
         I love learning new technologies as well as building and collaborating
@@ -33,9 +32,12 @@ export default function Home() {
       </p>
       <p>
         Some of my favorite technologies to work with these days are{' '}
-        <a href="https://reactjs.org/">React.js</a>,&nbsp;
+        <a href="https://angular.io/">Angular</a>,{' '}
+        <a href="https://www.java.com/en/">Java</a> /{' '}
+        <a href="https://spring.io/projects/spring-boot">Spring Boot</a>,{' '}
+        <a href="https://reactjs.org/">React.js</a>,{' '}
         <a href="https://reactnative.dev/">React Native</a>,{' '}
-        <a href="https://developer.android.com/">Android</a>,&nbsp;
+        <a href="https://developer.android.com/">Android</a>,{' '}
         <a href="https://golang.org/">Golang</a>, and{' '}
         <a href="https://www.python.org/">Python</a>.
       </p>
