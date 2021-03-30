@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { GitHubRepository } from '../lib/github'
 import { formatDate } from '../lib/date'
+import styles from './ProjectCard.module.css'
 
 export default function ProjectCard({
   repository
@@ -10,45 +11,11 @@ export default function ProjectCard({
   const { html_url, name, description, created_at, image_url } = repository
   return (
     <>
-      <style jsx>{`
-        .project-card {
-          display: flex;
-          flex-direction: column;
-          padding: 1rem;
-          justify-content: space-between;
-          border: 1px solid var(--nc-bg-3);
-          border-radius: 8px;
-          padding: 1em;
-        }
-        .project-card:hover {
-          border: 1px solid var(--nc-tx-2);
-          color: var(--nc-lk-2);
-          text-decoration: none;
-        }
-        .proj-name {
-          color: var(--nc-lk-1);
-        }
-        .proj-name:hover {
-          color: var(--nc-lk-2);
-          text-decoration: underline;
-        }
-        .proj-date {
-          color: var(--nc-tx-2);
-          font-size: 0.8em;
-        }
-        .card-img {
-          width: 100%;
-          border-radius: 8px;
-        }
-        .description {
-          color: var(--nc-tx-2);
-        }
-      `}</style>
-      <a href={html_url} className="project-card">
-        <div className="card-header">
-          <h2 className="proj-name">{name}</h2>
+      <a href={html_url} className={styles.projectCard}>
+        <div className={styles.cardHeader}>
+          <h2 className={styles.projName}>{name}</h2>
           <time
-            className="proj-date"
+            className={styles.projDate}
             dateTime={created_at}
             itemProp="created_at"
           >
@@ -60,14 +27,10 @@ export default function ProjectCard({
           code adapted from GitHub issue comment by @7ruth
           https://github.com/vercel/next.js/issues/18497#issuecomment-762397599
         */}
-        <div style={{height: '250px'}}>
-          <div style={{
-            position: 'relative',
-            maxWidth: '100%',
-            height: '100%'
-          }}>
+        <div className={styles.cardImgWrapperOuter}>
+          <div className={styles.cardImgWrapperInner}>
             <Image
-              className="card-img"
+              className={styles.cardImg}
               src={image_url}
               alt={name}
               layout="fill"
@@ -76,7 +39,7 @@ export default function ProjectCard({
           </div>
         </div>
 
-        <div className="description" itemProp="description">
+        <div className={styles.description} itemProp="description">
           {description}
         </div>
       </a>
