@@ -7,7 +7,6 @@ export default function Header() {
   const tagline = 'Homebrewed Dev'
   return (
     <header className={styles.header}>
-
       {/*
         preserve aspect ratio while still using next/image
         code adapted from GitHub issue comment by @7ruth
@@ -29,14 +28,6 @@ export default function Header() {
           />
         </div>
       </div>
-
-      {/*<img
-        src="/images/profile.jpg"
-        width={96}
-        height={96}
-        className={`${styles.headerImage} ${styles.borderCircle}`}
-        alt={name}
-      />*/}
       <div className={styles.headerContainer}>
         <h1 className={styles.name}>{name}</h1>
         <small>{tagline}</small>
