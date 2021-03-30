@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import styles from './Navigation.module.css'
 
 interface NavItem {
   name: string
@@ -17,31 +18,15 @@ export default function Navigation() {
   const { pathname } = useRouter()
   return (
     <nav>
-      <style jsx>{`
-        .nav-item {
-          display: inline;
-        }
-        .nav-link {
-          font-size: 18px;
-        }
-        .nav-link:hover {
-          text-decoration: none;
-          border-bottom: 2px solid;
-        }
-        .active {
-          font-weight: bold;
-          border-bottom: 2px solid;
-        }
-      `}</style>
       {links.map(({ name, dest }) => (
-        <div className="nav-item" key={name}>
+        <div className={styles.navItem} key={name}>
           <Link href={dest}>
             <a
               className={
                 pathname === dest ||
                 (name === 'Blog' && pathname.includes(dest))
-                  ? 'active nav-link'
-                  : 'nav-link'
+                  ? `${styles.active} ${styles.navLink}`
+                  : styles.navLink
               }
             >
               {name}

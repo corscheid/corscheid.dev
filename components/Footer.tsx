@@ -1,30 +1,14 @@
 import SocialIcon from './SocialIcon'
+import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
     <footer>
-      <style jsx>{`
-        .flex {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          align-items: center;
-          height: 10em;
-        }
-        a {
-          margin: 0 0.5vw;
-          text-decoration: none;
-          color: inherit;
-        }
-        a:hover {
-          border-bottom: none;
-          color: var(--nc-ac-1);
-        }
-      `}</style>
-      <div className="container">
-        <div className="flex">
+      <div className={styles.container}>
+        <div className={styles.flex}>
           <div>
             <a
+              className={styles.footerLink}
               target="_blank"
               rel="noopener noreferrer"
               href="https://dev.to/corscheid"
@@ -33,6 +17,7 @@ export default function Footer() {
               <SocialIcon name="dev" />
             </a>
             <a
+              className={styles.footerLink}
               target="_blank"
               rel="noopener noreferrer"
               href="https://keybase.io/corscheid"
@@ -42,6 +27,7 @@ export default function Footer() {
             </a>
 
             <a
+              className={styles.footerLink}
               target="_blank"
               rel="noopener noreferrer"
               href="https://twitter.com/corscheid"
@@ -51,6 +37,7 @@ export default function Footer() {
             </a>
 
             <a
+              className={styles.footerLink}
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/corscheid"
@@ -60,6 +47,7 @@ export default function Footer() {
             </a>
 
             <a
+              className={styles.footerLink}
               target="_blank"
               rel="noopener noreferrer"
               href="https://linkedin.com/in/corscheid"
@@ -69,6 +57,7 @@ export default function Footer() {
             </a>
 
             <a
+              className={styles.footerLink}
               target="_blank"
               rel="noopener noreferrer"
               href="https://facebook.com/corscheid"
@@ -78,7 +67,7 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            <a href="https://github.com/corscheid/corscheid.dev">
+            <a className={styles.footerLink} href="https://github.com/corscheid/corscheid.dev">
               corscheid.dev
             </a>
             &copy; {new Date().getFullYear()}

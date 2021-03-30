@@ -1,0 +1,18 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10em;
+}
+
+.footerLink {
+  margin: 0 0.5vw;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footerLink:hover {
+  border-bottom: none;
+  color: var(--nc-ac-1);
+}
