@@ -1,7 +1,12 @@
 import SocialIcon from './SocialIcon'
 import styles from './Footer.module.css'
 
-function FooterIconLink({ href, title }) {
+interface Link {
+  title: string
+  href: string
+}
+
+function FooterIconLink({ href, title }: Link) {
   return (
     <a
       className={styles.footerLink}
@@ -16,7 +21,7 @@ function FooterIconLink({ href, title }) {
 }
 
 export default function Footer() {
-  const links = [
+  const links: Link[] = [
     {title: "dev", href: "https://dev.to/corscheid"},
     {title: "keybase", href: "https://keybase.io/corscheid"},
     {title: "twitter", href: "https://twitter.com/corscheid"},
