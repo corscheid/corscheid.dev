@@ -38,12 +38,12 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
             src={cover_image}
             alt={cover_alt}
             width={750}
-            height={420}            
+            height={420}
           />
           <div
             className="post-content e-content"
             itemProp="articleBody"
-            dangerouslySetInnerHTML={{ __html: marked(content.split('\n')[1]) }}
+            dangerouslySetInnerHTML={{ __html: marked(content.split('\n')[2]) }}
           ></div>
           <Link href="/blog/[slug]" as={`/blog/${slug}`}>
             <a>Read more &rarr;</a>
