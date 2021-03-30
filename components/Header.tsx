@@ -15,7 +15,7 @@ export default function Header() {
       */}
       <div style={{height: '96px', width: '96px'}}>
         <div style={{
-          margin: '1rem 0px',
+          marginTop: '1.1rem',
           position: 'relative',
           maxWidth: '100%',
           height: '100%'
