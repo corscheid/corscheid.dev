@@ -22,23 +22,15 @@ export default function ProjectCard({
             {formatDate(created_at)}
           </time>
         </div>
-        {/*
-          preserve aspect ratio while still using next/image
-          code adapted from GitHub issue comment by @7ruth
-          https://github.com/vercel/next.js/issues/18497#issuecomment-762397599
-        */}
-        <div className={styles.cardImgWrapperOuter}>
-          <div className={styles.cardImgWrapperInner}>
-            <Image
-              className={styles.cardImg}
-              src={image_url}
-              alt={name}
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+        <div className={styles.cardImgWrapper}>
+          <Image
+            className={styles.cardImage}
+            src={image_url}
+            alt={name}
+            layout="fill"
+            objectFit="contain"
+          />
         </div>
-
         <div className={styles.description} itemProp="description">
           {description}
         </div>
