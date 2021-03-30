@@ -1,5 +1,6 @@
 // Code from https://github.com/styfle/styfle.dev adapted with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/index.tsx
+import Image from 'next/image'
 import Link from 'next/link'
 import marked from 'marked'
 
@@ -17,7 +18,7 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
   return (
     <Layout title="Blog">
       <h1>Blog</h1>
-      {posts.map(({ slug, title, date, content }) => (
+      {posts.map(({ slug, title, date, cover_image, cover_alt, content }) => (
         <article key={slug}>
           <h2>
             <Link href="/blog/[slug]" as={`/blog/${slug}`}>
@@ -33,6 +34,12 @@ export default function Blog({ posts }: { posts: BlogPost[] }) {
               {formatDate(date)}
             </time>
           </p>
+          <Image
+            src={cover_image}
+            alt={cover_alt}
+            width={750}
+            height={420}            
+          />
           <div
             className="post-content e-content"
             itemProp="articleBody"

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { GitHubRepository } from '../lib/github'
 import { formatDate } from '../lib/date'
 
@@ -54,8 +55,26 @@ export default function ProjectCard({
             {formatDate(created_at)}
           </time>
         </div>
-
-        <img className="card-img" src={image_url} />
+        {/*
+          preserve aspect ratio while still using next/image
+          code adapted from GitHub issue comment by @7ruth
+          https://github.com/vercel/next.js/issues/18497#issuecomment-762397599
+        */}
+        <div style={{height: '250px'}}>
+          <div style={{
+            position: 'relative',
+            maxWidth: '100%',
+            height: '100%'
+          }}>
+            <Image
+              className="card-img"
+              src={image_url}
+              alt={name}
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
 
         <div className="description" itemProp="description">
           {description}
