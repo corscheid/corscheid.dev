@@ -13,11 +13,11 @@ export default function Header() {
         code adapted from GitHub issue comment by @7ruth
         https://github.com/vercel/next.js/issues/18497#issuecomment-762397599
       */}
-      <div style={{ height: '96px', width: '96px' }}>
+      <div className={styles.imageWrapperOuter}>
         <div className={styles.imageWrapper}>
           <Image
             className={`${styles.headerImage} ${styles.borderCircle}`}
-            src={"/images/profile.jpg"}
+            src={'/images/profile.jpg'}
             alt={name}
             layout="fill"
             objectFit="contain"

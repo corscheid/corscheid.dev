@@ -6,6 +6,8 @@
   .header {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -26,11 +28,17 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    margin-top: 1rem;
     padding-left: 0;
     line-height: 2rem;
     justify-content: center;
     align-items: center;
   }
+}
+
+.imageWrapperOuter {
+  height: 96px;
+  width: 96px;
 }
 
 .imageWrapper {
