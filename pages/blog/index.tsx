@@ -1,12 +1,17 @@
 // Code from https://github.com/styfle/styfle.dev adapted with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/index.tsx
+import marked from 'marked'
 import Image from 'next/image'
 import Link from 'next/link'
-import marked from 'marked'
-
 import Layout from '../../components/Layout'
-import { getPosts, BlogPost } from '../../lib/posts'
+import { BlogPost } from '../../interfaces/blog-post'
+import { BLOG } from '../../lib/constants'
 import { formatDate } from '../../lib/date'
+import { getPosts } from '../../lib/posts'
+
+interface Props {
+  posts: BlogPost[]
+}
 
 export async function getStaticProps() {
   const posts = await getPosts()
@@ -14,10 +19,10 @@ export async function getStaticProps() {
   return { props: { posts: sortedPosts } }
 }
 
-export default function Blog({ posts }: { posts: BlogPost[] }) {
+export default function Blog({ posts }: Props) {
   return (
-    <Layout title="Blog">
-      <h1>Blog</h1>
+    <Layout title={BLOG}>
+      <h1>{BLOG}</h1>
       {posts.map(({ slug, title, date, cover_image, cover_alt, content }) => (
         <article key={slug}>
           <h2>

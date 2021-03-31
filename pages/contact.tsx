@@ -1,22 +1,25 @@
 import Layout from '../components/Layout'
+import { CONTACT, TWITTER_URL, LINKEDIN_URL, KEYBASE_URL, EMAIL_URL } from '../lib/constants'
 
 export default function Contact() {
   return (
-    <Layout title="Contact">
-      <h1>Contact</h1>
+    <Layout title={CONTACT}>
+      <h1>{CONTACT}</h1>
+
       <p>Let's get in touch! Here's how you can reach me:</p>
+
       <ul style={{ listStyleType: 'initial' }}>
         <li>
-          Twitter: <a href="https://twitter.com/corscheid">@corscheid</a>
+          Twitter: <a href={TWITTER_URL}>@corscheid</a>
         </li>
         <li>
-          LinkedIn: <a href="https://linkedin.com/in/corscheid">corscheid</a>
+          LinkedIn: <a href={LINKEDIN_URL}>corscheid</a>
         </li>
         <li>
-          Keybase: <a href="https://keybase.io/corscheid">corscheid</a>
+          Keybase: <a href={KEYBASE_URL}>corscheid</a>
         </li>
         <li>
-          Email: <a href="mailto:corscheid@gmail.com">corscheid@gmail.com</a>
+          Email: <a href={EMAIL_URL}>corscheid@gmail.com</a>
         </li>
       </ul>
     </Layout>

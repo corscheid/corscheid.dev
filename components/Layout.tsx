@@ -1,7 +1,7 @@
 import Head from 'next/head'
-
-import Header from './Header'
+import { META_DESCRIPTION } from '../lib/constants'
 import Footer from './Footer'
+import Header from './Header'
 
 interface Props {
   title: string
@@ -16,7 +16,7 @@ export default function Layout({ title, children }: Props) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="Description"
-          content="Hi, I'm Corey and I'm a Junior Full Stack Web Developer in the Saint Louis, Missouri area."
+          content={META_DESCRIPTION}
         />
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />

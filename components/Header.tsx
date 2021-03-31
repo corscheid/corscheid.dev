@@ -1,10 +1,11 @@
 import Image from 'next/image'
-import Navigation from './Navigation'
+import { NAME, TAGLINE } from '../lib/constants'
 import styles from './Header.module.css'
+import Navigation from './Navigation'
 
 export default function Header() {
-  const name = 'Corey Scheideman'
-  const tagline = 'Homebrewed Dev'
+  const name = NAME
+  const tagline = TAGLINE
   return (
     <header className={styles.header}>
       {/*
@@ -12,13 +13,8 @@ export default function Header() {
         code adapted from GitHub issue comment by @7ruth
         https://github.com/vercel/next.js/issues/18497#issuecomment-762397599
       */}
-      <div style={{height: '96px', width: '96px'}}>
-        <div style={{
-          marginTop: '1.1rem',
-          position: 'relative',
-          maxWidth: '100%',
-          height: '100%'
-        }}>
+      <div style={{ height: '96px', width: '96px' }}>
+        <div className={styles.imageWrapper}>
           <Image
             className={`${styles.headerImage} ${styles.borderCircle}`}
             src={"/images/profile.jpg"}

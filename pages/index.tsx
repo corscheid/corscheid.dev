@@ -1,8 +1,9 @@
 import Layout from '../components/Layout'
+import { HOME } from '../lib/constants'
 
 export default function Home() {
   return (
-    <Layout title="Home">
+    <Layout title={HOME}>
       <style jsx>{`
         .big-text {
           font-size: 2.25rem;

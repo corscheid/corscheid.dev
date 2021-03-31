@@ -1,21 +1,17 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { NavItem } from '../interfaces/nav-item'
+import { BLOG, CONTACT, HOME, PROJECTS } from '../lib/constants'
 import styles from './Navigation.module.css'
 
-interface NavItem {
-  name: string
-  dest: string
-}
-
-const links: NavItem[] = [
-  { name: 'Home', dest: '/' },
-  { name: 'Blog', dest: '/blog' },
-  { name: 'Projects', dest: '/projects' },
-  { name: 'Contact', dest: '/contact' }
-]
-
-export default function Navigation() {
+export default function Navigation(): JSX.Element {
   const { pathname } = useRouter()
+  const links: NavItem[] = [
+    { name: HOME, dest: '/' },
+    { name: BLOG, dest: '/blog' },
+    { name: PROJECTS, dest: '/projects' },
+    { name: CONTACT, dest: '/contact' }
+  ]
   return (
     <nav>
       {links.map(({ name, dest }) => (
@@ -24,7 +20,7 @@ export default function Navigation() {
             <a
               className={
                 pathname === dest ||
-                (name === 'Blog' && pathname.includes(dest))
+                  (name === BLOG && pathname.includes(dest))
                   ? `${styles.active} ${styles.navLink}`
                   : styles.navLink
               }
@@ -32,7 +28,7 @@ export default function Navigation() {
               {name}
             </a>
           </Link>
-          {name !== 'Contact' ? ' / ' : null}
+          {name !== CONTACT ? ' / ' : null}
         </div>
       ))}
     </nav>

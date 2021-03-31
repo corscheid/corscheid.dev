@@ -1,22 +1,10 @@
 // Code from https://github.com/styfle/styfle.dev used with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/utils/posts.ts
-import matter from 'gray-matter'
-import { resolve, join } from 'path'
 import fs from 'fs'
+import matter from 'gray-matter'
+import { join, resolve } from 'path'
+import { BlogPost } from '../interfaces/blog-post'
 const { readFile, readdir } = fs.promises
-
-export interface BlogPost {
-  title: string
-  slug: string
-  date: string
-  description: string
-  tags: string
-  cover_image: string
-  cover_alt: string
-  series: string
-  published: boolean
-  content: string
-}
 
 function validate(fieldName: string, fieldValue: string, fileName: string): void {
   if (typeof fieldValue !== 'string') {
@@ -41,15 +29,15 @@ export async function getPosts(): Promise<BlogPost[]> {
       } = matter(markdown)
 
       const fields = [
-        {name: 'title', value: title},
-        {name: 'slug', value: slug},
-        {name: 'date', value: date},
-        {name: 'description', value: description},
-        {name: 'tags', value: tags},
-        {name: 'cover_image', value: cover_image},
-        {name: 'cover_alt', value: cover_alt},
-        {name: 'series', value: series},
-        {name: 'published', value: published},
+        { name: 'title', value: title },
+        { name: 'slug', value: slug },
+        { name: 'date', value: date },
+        { name: 'description', value: description },
+        { name: 'tags', value: tags },
+        { name: 'cover_image', value: cover_image },
+        { name: 'cover_alt', value: cover_alt },
+        { name: 'series', value: series },
+        { name: 'published', value: published },
       ]
 
       fields.forEach(field => { validate(field.value, field.name, fileName) })

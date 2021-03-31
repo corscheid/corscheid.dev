@@ -1,15 +1,17 @@
 import Layout from '../components/Layout'
-import { getRepositories, GitHubRepository } from '../lib/github'
+import { getRepositories } from '../lib/github'
+import { GitHubRepository } from '../interfaces/github-repository'
 import ProjectCard from '../components/ProjectCard'
+import { PROJECTS } from '../lib/constants'
 
-export default function Projects({
-  projects
-}: {
+interface Props {
   projects: GitHubRepository[]
-}) {
+}
+
+export default function Projects({ projects }: Props) {
   return (
-    <Layout title="Projects">
-      <h1>Projects</h1>
+    <Layout title={PROJECTS}>
+      <h1>{PROJECTS}</h1>
       <div className="card-grid">
         <style jsx>{`
           .card-grid {

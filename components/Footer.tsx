@@ -1,44 +1,35 @@
-import SocialIcon from './SocialIcon'
+import { Hyperlink } from '../interfaces/hyperlink'
+import {
+  DEV_URL,
+  DOMAIN,
+  FACEBOOK_URL,
+  GITHUB_URL,
+  KEYBASE_URL,
+  LINKEDIN_URL,
+  TWITTER_URL
+} from '../lib/constants'
 import styles from './Footer.module.css'
-
-interface Link {
-  title: string
-  href: string
-}
-
-function FooterIconLink({ href, title }: Link) {
-  return (
-    <a
-      className={styles.footerLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-      title={title}
-    >
-      <SocialIcon name={title} />
-    </a>
-  )
-}
+import FooterIconLink from './FooterIconLink'
 
 export default function Footer() {
-  const links: Link[] = [
-    {title: "dev", href: "https://dev.to/corscheid"},
-    {title: "keybase", href: "https://keybase.io/corscheid"},
-    {title: "twitter", href: "https://twitter.com/corscheid"},
-    {title: "github", href: "https://github.com/corscheid"},
-    {title: "linkedin", href: "https://linkedin.com/in/corscheid"},
-    {title: "facebook", href: "https://facebook.com/corscheid"}
+  const links: Hyperlink[] = [
+    { title: "dev", href: DEV_URL },
+    { title: "keybase", href: KEYBASE_URL },
+    { title: "twitter", href: TWITTER_URL },
+    { title: "github", href: GITHUB_URL },
+    { title: "linkedin", href: LINKEDIN_URL },
+    { title: "facebook", href: FACEBOOK_URL }
   ]
   return (
     <footer>
       <div className={styles.container}>
         <div className={styles.flex}>
           <div>
-            {links.map(link => FooterIconLink(link))}
+            {links.map(link => <FooterIconLink title={link.title} href={link.href} key={link.title} />)}
           </div>
           <div>
-            <a className={styles.footerLink} href="https://github.com/corscheid/corscheid.dev">
-              corscheid.dev
+            <a className={styles.footerLink} href={GITHUB_URL}>
+              {DOMAIN}
             </a>
             &copy; {new Date().getFullYear()}
           </div>
