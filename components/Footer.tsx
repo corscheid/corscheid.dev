@@ -1,4 +1,3 @@
-import { Hyperlink } from '../interfaces/hyperlink'
 import {
   DEV_URL,
   DOMAIN,
@@ -8,8 +7,10 @@ import {
   LINKEDIN_URL,
   TWITTER_URL
 } from '../lib/constants'
-import styles from './Footer.module.css'
+
 import FooterIconLink from './FooterIconLink'
+import { Hyperlink } from '../interfaces'
+import styles from './Footer.module.css'
 
 export default function Footer() {
   const links: Hyperlink[] = [

@@ -1,5 +1,11 @@
 import Layout from '../components/Layout'
-import { CONTACT, TWITTER_URL, LINKEDIN_URL, KEYBASE_URL, EMAIL_URL } from '../lib/constants'
+import {
+  CONTACT,
+  TWITTER_URL,
+  LINKEDIN_URL,
+  KEYBASE_URL,
+  EMAIL_URL
+} from '../lib/constants'
 
 export default function Contact() {
   return (

@@ -1,8 +1,9 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { NavItem } from '../interfaces/nav-item'
 import { BLOG, CONTACT, HOME, PROJECTS } from '../lib/constants'
+
+import Link from 'next/link'
+import { NavItem } from '../interfaces'
 import styles from './Navigation.module.css'
+import { useRouter } from 'next/router'
 
 export default function Navigation(): JSX.Element {
   const { pathname } = useRouter()
@@ -19,8 +20,7 @@ export default function Navigation(): JSX.Element {
           <Link href={dest}>
             <a
               className={
-                pathname === dest ||
-                  (name === BLOG && pathname.includes(dest))
+                pathname === dest || (name === BLOG && pathname.includes(dest))
                   ? `${styles.active} ${styles.navLink}`
                   : styles.navLink
               }

@@ -1,8 +1,8 @@
-interface Props {
-  name: string
-}
+import { SocialIconProps } from '../interfaces'
 
-export default function SocialIcon({ name }: Props): JSX.Element | null {
+export default function SocialIcon({
+  name
+}: SocialIconProps): JSX.Element | null {
   switch (name) {
     case 'dev':
       return (

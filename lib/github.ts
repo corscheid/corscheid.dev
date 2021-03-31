@@ -1,4 +1,5 @@
 import { existsSync, promises } from 'fs'
+
 import { GitHubRepository } from '../interfaces/github-repository'
 const { writeFile, readFile } = promises
 
@@ -30,7 +31,7 @@ async function fetchFromGitHub(
   )
   const repositories: GitHubRepository[] = await response.json()
   return repositories.filter(
-    repository => !excludeList.includes(repository.name)
+    (repository) => !excludeList.includes(repository.name)
   )
 }
 
@@ -80,21 +81,21 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
       'corscheid',
       exclude.corscheid
     )
-    corscheidRepos.forEach(repo => {
+    corscheidRepos.forEach((repo) => {
       repo.image_url = getImageURL(repo)
       const { html_url, name, created_at, image_url, description } = repo
       repositories.push({ html_url, name, created_at, image_url, description })
     })
 
     tireaRepos = await fetchFromGitHub('users', 'tirea', exclude.tirea)
-    tireaRepos.forEach(repo => {
+    tireaRepos.forEach((repo) => {
       repo.image_url = getImageURL(repo)
       const { html_url, name, created_at, image_url, description } = repo
       repositories.push({ html_url, name, created_at, image_url, description })
     })
 
     fwewOrgRepos = await fetchFromGitHub('orgs', 'fwew', exclude.fwew)
-    fwewOrgRepos.forEach(repo => {
+    fwewOrgRepos.forEach((repo) => {
       repo.image_url = getImageURL(repo)
       const { html_url, name, created_at, image_url, description } = repo
       repositories.push({ html_url, name, created_at, image_url, description })

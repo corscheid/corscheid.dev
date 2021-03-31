@@ -1,14 +1,10 @@
 import Layout from '../components/Layout'
-import { getRepositories } from '../lib/github'
-import { GitHubRepository } from '../interfaces/github-repository'
-import ProjectCard from '../components/ProjectCard'
 import { PROJECTS } from '../lib/constants'
+import ProjectCard from '../components/ProjectCard'
+import { ProjectsProps } from '../interfaces'
+import { getRepositories } from '../lib/github'
 
-interface Props {
-  projects: GitHubRepository[]
-}
-
-export default function Projects({ projects }: Props) {
+export default function Projects({ projects }: ProjectsProps) {
   return (
     <Layout title={PROJECTS}>
       <h1>{PROJECTS}</h1>
@@ -20,8 +16,8 @@ export default function Projects({ projects }: Props) {
             grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
           }
         `}</style>
-        {projects.map(project => (
-          <ProjectCard repository={project} key={project.name} />
+        {projects.map((project, idx) => (
+          <ProjectCard repository={project} key={idx} priority={idx < 5} />
         ))}
       </div>
     </Layout>

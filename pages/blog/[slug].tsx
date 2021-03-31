@@ -10,30 +10,22 @@ import Layout from '../../components/Layout'
 import { formatDate } from '../../lib/date'
 import { markdownToHtml } from '../../lib/markdown'
 import { getPosts } from '../../lib/posts'
+import { PostProps, Params } from '../../interfaces'
 
 hljs.registerLanguage('typescript', typescript)
 hljs.registerLanguage('scss', scss)
 hljs.registerLanguage('shell', shell)
-
-interface PostProps {
-  slug: string
-  title: string
-  date: string
-  html: string
-}
-
-interface Params {
-  params: { slug: string }
-}
 
 export const getStaticPaths = async () => ({
   paths: (await getPosts()).map((p: { slug: string }) => `/blog/${p.slug}`),
   fallback: false
 })
 
-export async function getStaticProps({ params }: Params): Promise<{ props: PostProps }> {
+export async function getStaticProps({
+  params
+}: Params): Promise<{ props: PostProps }> {
   const { slug } = params
-  const post = (await getPosts()).find(p => p.slug === slug)
+  const post = (await getPosts()).find((p) => p.slug === slug)
   if (!post) {
     throw new Error(`Expected slug ${slug}`)
   }
@@ -46,7 +38,9 @@ export async function getStaticProps({ params }: Params): Promise<{ props: PostP
 
 export default function Post(props: PostProps) {
   const { slug, title, date, html } = props
-  useEffect(() => { hljs.initHighlighting() }, [])
+  useEffect(() => {
+    hljs.initHighlighting()
+  }, [])
   return (
     <Layout title={title}>
       <article>

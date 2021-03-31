@@ -1,5 +1,5 @@
-import Layout from '../components/Layout'
 import { HOME } from '../lib/constants'
+import Layout from '../components/Layout'
 
 export default function Home() {
   return (
