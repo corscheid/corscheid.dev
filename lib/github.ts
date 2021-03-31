@@ -1,6 +1,7 @@
 import { existsSync, promises } from 'fs'
 
-import { GitHubRepository } from '../interfaces/github-repository'
+import { GitHubRepository } from '../interfaces'
+
 const { writeFile, readFile } = promises
 
 function getImageURL(repo: GitHubRepository): string {
