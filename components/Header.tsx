@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import { NAME, TAGLINE } from '../lib/constants'
-import styles from './Header.module.css'
+
+import Image from 'next/image'
 import Navigation from './Navigation'
+import styles from './Header.module.css'
 
 export default function Header() {
   const name = NAME
@@ -19,8 +20,9 @@ export default function Header() {
             className={`${styles.headerImage} ${styles.borderCircle}`}
             src={'/images/profile.jpg'}
             alt={name}
-            layout="fill"
-            objectFit="contain"
+            layout="responsive"
+            width={96}
+            height={96}
           />
         </div>
       </div>
