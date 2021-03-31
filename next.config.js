@@ -1,5 +1,6 @@
+import { DUMMY_IMG_DOMAIN } from './lib/constants'
 module.exports = {
   images: {
-    domains: ['dummyimage.com'],
-  },
+    domains: [DUMMY_IMG_DOMAIN]
+  }
 }

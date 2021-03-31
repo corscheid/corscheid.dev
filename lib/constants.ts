@@ -12,6 +12,13 @@ export const BLOG = 'Blog'
 export const PROJECTS = 'Projects'
 export const CONTACT = 'Contact'
 
+/* Projects */
+export const DUMMY_IMG_DOMAIN = 'dummyimage.com'
+const DUMMY_IMG_SIZE = '1188x792'
+const DUMMY_IMG_BG_COLOR = '282C34'
+const DUMMY_IMG_TXT_COLOR = 'eee'
+export const DUMMY_IMG_URL = `https://${DUMMY_IMG_DOMAIN}/${DUMMY_IMG_SIZE}/${DUMMY_IMG_BG_COLOR}/${DUMMY_IMG_TXT_COLOR}`
+
 /* Contact */
 export const EMAIL_URL = 'mailto:corscheid@gmail.com'
 
