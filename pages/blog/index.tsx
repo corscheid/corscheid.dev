@@ -47,7 +47,7 @@ export default function Blog({ posts }: BlogProps) {
               className="post-content e-content"
               itemProp="articleBody"
               dangerouslySetInnerHTML={{
-                __html: marked(content.split('\n')[2])
+                __html: marked(content.split('\n')[3])
               }}
             ></div>
             <Link href="/blog/[slug]" as={`/blog/${slug}`}>
