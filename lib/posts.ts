@@ -1,9 +1,11 @@
 // Code from https://github.com/styfle/styfle.dev used with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/utils/posts.ts
+import { join, resolve } from 'path'
+
+import { BlogPost } from '../interfaces'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { join, resolve } from 'path'
-import { BlogPost } from '../interfaces/blog-post'
+
 const { readFile, readdir } = fs.promises
 
 function validate(
