@@ -42,6 +42,7 @@ export default function Blog({ posts }: BlogProps) {
               width={750}
               height={420}
               priority={idx < 5}
+              loading={idx < 5 ? 'eager' : 'lazy'}
             />
             <div
               className="post-content e-content"

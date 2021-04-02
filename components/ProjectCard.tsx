@@ -1,6 +1,5 @@
-import { GitHubRepository, ProjectCardProps } from '../interfaces'
-
 import Image from 'next/image'
+import { ProjectCardProps } from '../interfaces'
 import { formatDate } from '../lib/date'
 import styles from './ProjectCard.module.css'
 
@@ -29,6 +28,8 @@ export default function ProjectCard({
             alt={name}
             layout="fill"
             objectFit="contain"
+            priority={priority}
+            loading={priority ? 'eager' : 'lazy'}
           />
         </div>
         <div className={styles.description} itemProp="description">

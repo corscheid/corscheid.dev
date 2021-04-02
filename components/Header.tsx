@@ -23,6 +23,8 @@ export default function Header() {
             layout="responsive"
             width={96}
             height={96}
+            loading="eager"
+            priority
           />
         </div>
       </div>
