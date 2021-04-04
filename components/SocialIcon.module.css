@@ -1,0 +1,36 @@
+.socialSvg {
+  fill: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+}
+
+.socialSvg:hover {
+  transition: border-radius 200ms;
+  border-radius: 8px;
+}
+
+.dev {
+  background-color: var(--nc-tx-2);
+  fill: var(--nc-bg-2);
+}
+
+.keybase {
+  background-color: #33a0ff;
+}
+
+.twitter {
+  fill: rgb(29, 161, 242);
+}
+
+.github {
+  fill: #4183c4;
+}
+
+.linkedin {
+  fill: #0077b5;
+}
+
+.facebook {
+  fill: #3b5998;
+}
