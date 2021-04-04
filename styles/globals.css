@@ -390,7 +390,7 @@ body,
 }
 
 main {
-  min-height: calc(100vh - 510px);
+  min-height: calc(100vh - 524px);
   padding-bottom: 1rem;
 }
 
