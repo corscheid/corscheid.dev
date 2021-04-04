@@ -22,7 +22,7 @@ export default function Footer() {
     { title: 'facebook', href: FACEBOOK_URL }
   ]
   return (
-    <footer>
+    <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.flex}>
           <div>
