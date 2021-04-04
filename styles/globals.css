@@ -5,12 +5,13 @@
  *
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css');
 :root {
-  --nc-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --nc-font-mono: Consolas, monaco, "Ubuntu Mono", "Liberation Mono",
-    "Courier New", Courier, monospace;
+  --nc-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --nc-font-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono',
+    'Courier New', Courier, monospace;
   --nc-tx-1: #000000;
   --nc-tx-2: #1a1a1a;
   --nc-bg-1: #ffffff;
@@ -35,6 +36,30 @@
     --nc-ac-1: #7928ca;
     --nc-ac-tx: #ffffff;
   }
+}
+[data-theme='light'] {
+  --nc-tx-1: #000000;
+  --nc-tx-2: #1a1a1a;
+  --nc-bg-1: #ffffff;
+  --nc-bg-2: #f6f8fa;
+  --nc-bg-3: #e5e7eb;
+  --nc-lk-1: #0051ad;
+  --nc-lk-2: #0366d6;
+  --nc-lk-tx: #ffffff;
+  --nc-ac-1: #79ffe1;
+  --nc-ac-tx: #0c4047;
+}
+[data-theme='dark'] {
+  --nc-tx-1: #ffffff;
+  --nc-tx-2: #eeeeee;
+  --nc-bg-1: #000000;
+  --nc-bg-2: #111111;
+  --nc-bg-3: #222222;
+  --nc-lk-1: #3291ff;
+  --nc-lk-2: #0070f3;
+  --nc-lk-tx: #ffffff;
+  --nc-ac-1: #7928ca;
+  --nc-ac-tx: #ffffff;
 }
 * {
   margin: 0;
@@ -182,9 +207,9 @@ header > :last-child {
 }
 a button,
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   font-size: 1rem;
   display: inline-block;
   padding: 6px 12px;
@@ -201,9 +226,9 @@ input[type="submit"] {
 }
 a button[disabled],
 button[disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
+input[type='button'][disabled],
+input[type='reset'][disabled],
+input[type='submit'][disabled] {
   cursor: default;
   opacity: 0.5;
   cursor: not-allowed;
@@ -212,12 +237,12 @@ input[type="submit"][disabled] {
 .button:hover,
 button:focus,
 button:hover,
-input[type="button"]:focus,
-input[type="button"]:hover,
-input[type="reset"]:focus,
-input[type="reset"]:hover,
-input[type="submit"]:focus,
-input[type="submit"]:hover {
+input[type='button']:focus,
+input[type='button']:hover,
+input[type='reset']:focus,
+input[type='reset']:hover,
+input[type='submit']:focus,
+input[type='submit']:hover {
   background: var(--nc-lk-2);
 }
 code,
@@ -284,7 +309,7 @@ dt {
   font-weight: 700;
 }
 dd::before {
-  content: "→ ";
+  content: '→ ';
 }
 hr {
   border: 0;
