@@ -5,7 +5,7 @@ export default function ThemeSwitcher() {
     <ThemeContext.Consumer>
       {({ icon, toggle }) => (
         <>
-          <style jsx global>{`
+          <style jsx>{`
             #theme-toggle {
               width: 4.5em;
               color: var(--nc-lk-1);
@@ -19,8 +19,7 @@ export default function ThemeSwitcher() {
               user-select: none;
             }
             #theme-toggle i {
-              padding: 0.25em;
-              padding-left: 0;
+              padding-right: 0.25em;
             }
           `}</style>
           <div id="theme-toggle" onClick={toggle}>
