@@ -1,5 +1,11 @@
-.navItem {
-  display: inline;
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+  line-height: 3rem;
+}
+
+.divider {
+  padding: 0.5rem;
 }
 
 .navLink {
