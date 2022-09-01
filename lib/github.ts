@@ -45,6 +45,7 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
 
   const exclude = {
     corscheid: [
+      'corscheid',
       'corscheid.github.io',
       'fwew',
       'fwew-api',
@@ -69,7 +70,9 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
       'vrrtepcli',
       'VrrtepIRC'
     ],
-    fwew: []
+    fwew: [
+      'fwew.js'
+    ]
   }
 
   if (existsSync('projects.json')) {
