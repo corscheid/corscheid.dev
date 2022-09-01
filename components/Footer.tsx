@@ -5,7 +5,8 @@ import {
   GITHUB_URL,
   KEYBASE_URL,
   LINKEDIN_URL,
-  TWITTER_URL
+  TWITTER_URL,
+  REPO_URL
 } from '../lib/constants'
 
 import FooterIconLink from './FooterIconLink'
@@ -31,7 +32,7 @@ export default function Footer() {
             ))}
           </div>
           <div>
-            <a className={styles.footerLink} href={GITHUB_URL}>
+            <a className={styles.footerLink} href={REPO_URL}>
               {DOMAIN}
             </a>
             &copy; {new Date().getFullYear()}
