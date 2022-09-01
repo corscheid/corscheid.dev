@@ -68,7 +68,8 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
       'tirea-learnnavi-org',
       'ln-forum-js',
       'vrrtepcli',
-      'VrrtepIRC'
+      'VrrtepIRC',
+      'react-wordle'
     ],
     fwew: [
       'fwew.js'
