@@ -13,8 +13,8 @@ export default function Home() {
       `}</style>
       <div className="big-text">&#60; &#47;&#62; &#123; &#125;</div>
       <p>
-        Hi, I'm Corey and I'm a Junior Full Stack Web Developer in the Saint
-        Louis, Missouri area.
+        Hi, I'm Corey and I'm a Full Stack Web Developer in the Saint Louis,
+        Missouri area.
       </p>
       <p>
         I love learning new technologies as well as building and collaborating
