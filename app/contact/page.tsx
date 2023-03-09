@@ -1,15 +1,19 @@
-import Layout from '../components/Layout'
 import {
   CONTACT,
   EMAIL_URL,
   KEYBASE_URL,
   LINKEDIN_URL,
   TWITTER_URL
-} from '../lib/constants'
+} from '@/lib/constants'
 
-export default function Contact() {
+export const metadata = {
+  title: 'Contact',
+  description: 'Corey Scheideman - Contact'
+}
+
+export default function Page() {
   return (
-    <Layout title={CONTACT}>
+    <>
       <h1>{CONTACT}</h1>
 
       <p>Let&apos;s get in touch! Here&apos;s how you can reach me:</p>
@@ -28,6 +32,6 @@ export default function Contact() {
           Email: <a href={EMAIL_URL}>corscheid@gmail.com</a>
         </li>
       </ul>
-    </Layout>
+    </>
   )
 }
