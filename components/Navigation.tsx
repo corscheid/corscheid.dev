@@ -1,10 +1,12 @@
+'use client'
+
 import { BLOG, CONTACT, HOME, PROJECTS } from '../lib/constants'
 
 import Link from 'next/link'
-import { NavItem } from '../interfaces'
-import ThemeSwitcher from './ThemeSwitcher'
-import styles from './Navigation.module.css'
 import { useRouter } from 'next/router'
+import { type NavItem } from '../interfaces'
+import styles from './Navigation.module.css'
+import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Navigation(): JSX.Element {
   const { pathname } = useRouter()

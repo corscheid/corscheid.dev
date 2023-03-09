@@ -1,8 +1,10 @@
+'use client'
+
 import { NAME, TAGLINE } from '../lib/constants'
 
 import Image from 'next/image'
-import Navigation from './Navigation'
 import styles from './Header.module.css'
+import Navigation from './Navigation'
 
 export default function Header() {
   const name = NAME

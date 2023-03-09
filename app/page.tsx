@@ -1,20 +1,23 @@
-import { HOME } from '../lib/constants'
-import Layout from '../components/Layout'
+export const metadata = {
+  title: 'Home',
+  description: 'Corey Scheideman - Home brewed dev'
+}
 
-export default function Home() {
+export default function Page() {
   return (
-    <Layout title={HOME}>
-      <style jsx>{`
-        .big-text {
-          font-size: 2.25rem;
-          text-align: center;
-          margin-bottom: 2rem;
-        }
-      `}</style>
-      <div className="big-text">&#60; &#47;&#62; &#123; &#125;</div>
+    <section>
+      <div
+        style={{
+          fontSize: '2.25rem',
+          textAlign: 'center',
+          marginBottom: '2rem'
+        }}
+      >
+        &#60; &#47;&#62; &#123; &#125;
+      </div>
       <p>
-        Hi, I'm Corey and I'm a Full Stack Web Developer in the Saint Louis,
-        Missouri area.
+        Hi, I&apos;m Corey and I&apos;m a Full Stack Web Developer in the Saint
+        Louis, Missouri area.
       </p>
       <p>
         I love learning new technologies as well as building and collaborating
@@ -24,12 +27,13 @@ export default function Home() {
       </p>
       <p>
         A lot of the development I have done thus far has been for the{' '}
-        <a href="https://LearnNavi.org/">LearnNa'vi</a> Community using the
-        alias "Tirea Aean" (Na'vi for <em>'Blue Spirit'</em>) or "tirea" (
-        <em>spirit</em>). Learning and teaching the Na'vi language from James
-        Cameron's AVATAR has been a fun hobby for me since January 2010. It was
-        also how I found my way towards choosing to become a Software Engineer
-        as my career goal.
+        <a href="https://LearnNavi.org/">LearnNa&apos;vi</a> Community using the
+        alias &ldquo;Tirea Aean&rdquo; (Na&apos;vi for{' '}
+        <em>&lsquo;Blue Spirit&rsquo;</em>) or &ldquo;tirea&rdquo; (
+        <em>spirit</em>). Learning and teaching the Na&apos;vi language from
+        James Cameron&apos;s AVATAR has been a fun hobby for me since January
+        2010. It was also how I found my way towards choosing to become a
+        Software Engineer as my career goal.
       </p>
       <p>
         Some of my favorite technologies to work with these days are{' '}
@@ -42,6 +46,6 @@ export default function Home() {
         <a href="https://golang.org/">Golang</a>, and{' '}
         <a href="https://www.python.org/">Python</a>.
       </p>
-    </Layout>
+    </section>
   )
 }
