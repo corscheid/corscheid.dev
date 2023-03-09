@@ -18,7 +18,7 @@ export default function Navigation(): JSX.Element {
     <nav className={styles.nav}>
       {links.map(({ name, dest }) => (
         <div className={styles.navItem} key={name}>
-          <Link href={dest}>
+          <Link href={dest} legacyBehavior>
             <a
               className={
                 pathname === dest || (name === BLOG && pathname.includes(dest))

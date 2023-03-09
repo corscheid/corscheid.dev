@@ -23,7 +23,7 @@ export default function Blog({ posts }: BlogProps) {
         ({ slug, title, date, cover_image, cover_alt, content }, idx) => (
           <article key={slug}>
             <h2>
-              <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+              <Link href="/blog/[slug]" as={`/blog/${slug}`} legacyBehavior>
                 <a>{title}</a>
               </Link>
             </h2>
@@ -51,7 +51,7 @@ export default function Blog({ posts }: BlogProps) {
                 __html: marked(content.split('\n')[3])
               }}
             ></div>
-            <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+            <Link href="/blog/[slug]" as={`/blog/${slug}`} legacyBehavior>
               <a>Read more &rarr;</a>
             </Link>
             <hr />

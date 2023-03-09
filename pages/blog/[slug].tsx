@@ -74,7 +74,7 @@ export default function Post(props: PostProps) {
         <a href="#__next">&uarr; Up to top</a>
         <br />
         <br />
-        <Link href="/blog">
+        <Link href="/blog" legacyBehavior>
           <a>&larr; Back to blog</a>
         </Link>
       </article>
