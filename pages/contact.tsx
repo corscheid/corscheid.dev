@@ -1,10 +1,10 @@
 import Layout from '../components/Layout'
 import {
   CONTACT,
-  TWITTER_URL,
-  LINKEDIN_URL,
+  EMAIL_URL,
   KEYBASE_URL,
-  EMAIL_URL
+  LINKEDIN_URL,
+  TWITTER_URL
 } from '../lib/constants'
 
 export default function Contact() {
@@ -12,7 +12,7 @@ export default function Contact() {
     <Layout title={CONTACT}>
       <h1>{CONTACT}</h1>
 
-      <p>Let's get in touch! Here's how you can reach me:</p>
+      <p>Let&apos;s get in touch! Here&apos;s how you can reach me:</p>
 
       <ul style={{ listStyleType: 'initial' }}>
         <li>

@@ -2,7 +2,7 @@
 
 import { NAME, TAGLINE } from '../lib/constants'
 
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import styles from './Header.module.css'
 import Navigation from './Navigation'
 

@@ -1,7 +1,7 @@
 import { existsSync, promises } from 'fs'
 
+import { type GitHubRepository } from '../interfaces'
 import { DUMMY_IMG_URL } from '../lib/constants'
-import { GitHubRepository } from '../interfaces'
 
 const { writeFile, readFile } = promises
 
@@ -31,7 +31,7 @@ async function fetchFromGitHub(
   const response = await fetch(
     `https://api.github.com/${endpoint}/${user}/repos`
   )
-  const repositories: GitHubRepository[] = await response.json()
+  const repositories = (await response.json()) as GitHubRepository[]
   return repositories.filter(
     (repository) => !excludeList.includes(repository.name)
   )
@@ -71,14 +71,12 @@ export async function getRepositories(): Promise<GitHubRepository[]> {
       'VrrtepIRC',
       'react-wordle'
     ],
-    fwew: [
-      'fwew.js'
-    ]
+    fwew: ['fwew.js']
   }
 
   if (existsSync('projects.json')) {
     const json = await readFile('./projects.json', 'utf8')
-    repositories = JSON.parse(json)
+    repositories = JSON.parse(json) as GitHubRepository[]
   } else {
     repositories = []
 

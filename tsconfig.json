@@ -26,9 +26,12 @@
   },
   "include": [
     "next-env.d.ts",
+    "next.config.js",
+    ".eslintrc.cjs",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "/Users/corey/Code/corscheid.dev/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

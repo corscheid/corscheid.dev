@@ -1,4 +1,4 @@
-import { SocialIconProps } from '../interfaces'
+import { type SocialIconProps } from '../interfaces'
 import styles from './SocialIcon.module.css'
 
 export default function SocialIcon({

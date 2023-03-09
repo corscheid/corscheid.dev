@@ -7,10 +7,10 @@ import typescript from 'highlight.js/lib/languages/typescript'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import Layout from '../../components/Layout'
+import type { Params, PostProps } from '../../interfaces'
 import { formatDate } from '../../lib/date'
 import { markdownToHtml } from '../../lib/markdown'
 import { getPosts } from '../../lib/posts'
-import { PostProps, Params } from '../../interfaces'
 
 hljs.registerLanguage('typescript', typescript)
 hljs.registerLanguage('scss', scss)
@@ -44,7 +44,7 @@ export default function Post(props: PostProps) {
   return (
     <Layout title={title}>
       <article>
-        <style jsx>{`
+        <style>{`
           .article-header h1 {
             margin-bottom: 8px;
           }

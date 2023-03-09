@@ -5,13 +5,13 @@ import {
   GITHUB_URL,
   KEYBASE_URL,
   LINKEDIN_URL,
-  TWITTER_URL,
-  REPO_URL
+  REPO_URL,
+  TWITTER_URL
 } from '../lib/constants'
 
-import FooterIconLink from './FooterIconLink'
-import { Hyperlink } from '../interfaces'
+import { type Hyperlink } from '../interfaces'
 import styles from './Footer.module.css'
+import FooterIconLink from './FooterIconLink'
 
 export default function Footer() {
   const links: Hyperlink[] = [

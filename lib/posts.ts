@@ -2,26 +2,26 @@
 // Original file: https://github.com/styfle/styfle.dev/blob/main/utils/posts.ts
 import { join, resolve } from 'path'
 
-import { BlogPost } from '../interfaces'
 import fs from 'fs'
 import matter from 'gray-matter'
+import { type BlogPost } from '../interfaces'
 
 const { readFile, readdir } = fs.promises
 
 function validate(
   fieldName: string,
-  fieldValue: string,
+  fieldValue: string | boolean,
   fileName: string
-): void {
+) {
   if (typeof fieldValue !== 'string') {
     throw new Error(
-      `Expected string ${fieldName} but found: ${fieldValue}. ` +
+      `Expected string ${fieldName} but found: ${String(fieldValue)}. ` +
         `Did you forget to add it to ${fileName}?`
     )
   }
 }
 
-export async function getPosts(): Promise<BlogPost[]> {
+export async function getPosts() {
   const postsDirectory = resolve(process.cwd(), '_posts')
   const postFiles = await readdir(postsDirectory)
 
@@ -29,20 +29,18 @@ export async function getPosts(): Promise<BlogPost[]> {
     postFiles.map(async (fileName) => {
       const fullPath = join(postsDirectory, fileName)
       const markdown = await readFile(fullPath, 'utf8')
+      const { data, content } = matter(markdown)
       const {
-        data: {
-          title,
-          slug,
-          date,
-          description,
-          tags,
-          cover_image,
-          cover_alt,
-          series,
-          published
-        },
-        content
-      } = matter(markdown)
+        title,
+        slug,
+        date,
+        description,
+        tags,
+        cover_image,
+        cover_alt,
+        series,
+        published
+      } = data as BlogPost
 
       const fields = [
         { name: 'title', value: title },
@@ -57,7 +55,7 @@ export async function getPosts(): Promise<BlogPost[]> {
       ]
 
       fields.forEach((field) => {
-        validate(field.value, field.name, fileName)
+        validate(field.name, field.value, fileName)
       })
 
       return {

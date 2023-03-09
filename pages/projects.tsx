@@ -1,7 +1,7 @@
 import Layout from '../components/Layout'
-import { PROJECTS } from '../lib/constants'
 import ProjectCard from '../components/ProjectCard'
-import { ProjectsProps } from '../interfaces'
+import { type ProjectsProps } from '../interfaces'
+import { PROJECTS } from '../lib/constants'
 import { getRepositories } from '../lib/github'
 
 export default function Projects({ projects }: ProjectsProps) {
@@ -9,7 +9,7 @@ export default function Projects({ projects }: ProjectsProps) {
     <Layout title={PROJECTS}>
       <h1>{PROJECTS}</h1>
       <div className="card-grid">
-        <style jsx>{`
+        <style>{`
           .card-grid {
             display: grid;
             grid-gap: 1rem;

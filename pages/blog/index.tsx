@@ -1,13 +1,13 @@
 // Code from https://github.com/styfle/styfle.dev adapted with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/index.tsx
-import { BLOG } from '../../lib/constants'
-import { BlogProps } from '../../interfaces'
-import Image from 'next/image'
-import Layout from '../../components/Layout'
+import marked from 'marked'
+import Image from 'next/legacy/image'
 import Link from 'next/link'
+import Layout from '../../components/Layout'
+import { type BlogProps } from '../../interfaces'
+import { BLOG } from '../../lib/constants'
 import { formatDate } from '../../lib/date'
 import { getPosts } from '../../lib/posts'
-import marked from 'marked'
 
 export async function getStaticProps() {
   const posts = await getPosts()

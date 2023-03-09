@@ -5,7 +5,7 @@ export default function ThemeSwitcher() {
     <ThemeContext.Consumer>
       {({ icon, toggle }) => (
         <>
-          <style jsx>{`
+          <style>{`
             #theme-toggle {
               width: 4.5em;
               color: var(--nc-lk-1);

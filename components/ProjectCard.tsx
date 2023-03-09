@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import { ProjectCardProps } from '../interfaces'
+import Image from 'next/legacy/image'
+import { type ProjectCardProps } from '../interfaces'
 import { formatDate } from '../lib/date'
 import styles from './ProjectCard.module.css'
 

@@ -15,7 +15,9 @@ module.exports = {
   ],
   overrides: [
     {
-      extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
+      extends: [
+        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+      ],
       files: ['*.ts', '*.tsx'],
       parserOptions: {
         project: 'tsconfig.json'
@@ -38,7 +40,6 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single', { avoidEscape: true }],
     semi: ['error', 'never'],
-    camelcase: 'error',
     'spaced-comment': 'error',
     'no-duplicate-imports': 'error',
     eqeqeq: 'error',
