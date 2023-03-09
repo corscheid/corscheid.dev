@@ -3,13 +3,13 @@
 import { BLOG, CONTACT, HOME, PROJECTS } from '../lib/constants'
 
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { type NavItem } from '../interfaces'
 import styles from './Navigation.module.css'
 import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Navigation(): JSX.Element {
-  const { pathname } = useRouter()
+  const pathname = usePathname()
   const links: NavItem[] = [
     { name: HOME, dest: '/' },
     { name: BLOG, dest: '/blog' },
@@ -23,7 +23,7 @@ export default function Navigation(): JSX.Element {
           <Link href={dest} legacyBehavior>
             <a
               className={
-                pathname === dest || (name === BLOG && pathname.includes(dest))
+                pathname === dest || (name === BLOG && pathname?.includes(dest))
                   ? `${styles.active} ${styles.navLink}`
                   : styles.navLink
               }

@@ -13,7 +13,7 @@ function validate(
   fieldValue: string | boolean,
   fileName: string
 ) {
-  if (typeof fieldValue !== 'string') {
+  if (typeof fieldValue !== 'string' && typeof fieldValue !== 'boolean') {
     throw new Error(
       `Expected string ${fieldName} but found: ${String(fieldValue)}. ` +
         `Did you forget to add it to ${fileName}?`
