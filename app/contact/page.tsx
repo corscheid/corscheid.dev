@@ -1,5 +1,6 @@
 import {
   CONTACT,
+  DOMAIN,
   EMAIL_URL,
   KEYBASE_URL,
   LINKEDIN_URL,
@@ -8,7 +9,7 @@ import {
 
 export const metadata = {
   title: 'Contact',
-  description: 'Corey Scheideman - Contact'
+  description: `Contact | ${DOMAIN}`
 }
 
 export default function Page() {

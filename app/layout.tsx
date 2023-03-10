@@ -1,11 +1,11 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import { HOME, META_DESCRIPTION } from '@/lib/constants'
+import { DOMAIN, META_DESCRIPTION } from '@/lib/constants'
 import '@/styles/atom-one-dark.css'
 import '@/styles/globals.css'
 
 export const metadata = {
-  title: HOME,
+  title: DOMAIN,
   description: META_DESCRIPTION
 }
 
