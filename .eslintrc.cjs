@@ -33,7 +33,7 @@ module.exports = {
       jsx: true
     }
   },
-  ignorePatterns: ['node_modules', 'public', '.next'],
+  ignorePatterns: ['node_modules', 'public', '.next', 'postcss.config.js'],
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
     indent: ['error', 2, { SwitchCase: 1 }],
