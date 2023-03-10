@@ -4,13 +4,12 @@ import { BLOG, CONTACT, HOME, PROJECTS } from '../lib/constants'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { type NavItem } from '../interfaces'
 import styles from './Navigation.module.css'
 import ThemeSwitcher from './ThemeSwitcher'
 
-export default function Navigation(): JSX.Element {
+export default function Navigation() {
   const pathname = usePathname()
-  const links: NavItem[] = [
+  const links = [
     { name: HOME, dest: '/' },
     { name: BLOG, dest: '/blog' },
     { name: PROJECTS, dest: '/projects' },

@@ -1,11 +1,10 @@
-import type { Params } from '@/interfaces'
 import { formatDate } from '@/lib/date'
 import { markdownToHtml } from '@/lib/markdown'
 import { getPosts } from '@/lib/posts'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-export default async function Page({ params }: Params) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params
   const post = (await getPosts()).find((p) => p.slug === slug)
   if (!post) {

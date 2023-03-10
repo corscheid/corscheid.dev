@@ -1,18 +1,23 @@
 import { existsSync, promises } from 'fs'
-
-import { type GitHubRepository } from '../interfaces'
 import { DUMMY_IMG_URL } from '../lib/constants'
-
 const { writeFile, readFile } = promises
 
-function getImageURL(repo: GitHubRepository): string {
+export interface GitHubRepository {
+  html_url: string
+  name: string
+  description: string
+  created_at: string
+  image_url: string
+}
+
+function getImageURL(repo: GitHubRepository) {
   if (existsSync(`public/images/${repo.name}.png`)) {
     return `/images/${repo.name}.png`
   }
   return `${DUMMY_IMG_URL}/?text=${repo.name}`
 }
 
-function compareProjectDates(a: GitHubRepository, b: GitHubRepository): number {
+function compareProjectDates(a: GitHubRepository, b: GitHubRepository) {
   const aDate = new Date(a.created_at)
   const bDate = new Date(b.created_at)
   // sort descending
@@ -27,7 +32,7 @@ async function fetchFromGitHub(
   endpoint: string,
   user: string,
   excludeList: string[]
-): Promise<GitHubRepository[]> {
+) {
   const response = await fetch(
     `https://api.github.com/${endpoint}/${user}/repos`
   )
@@ -37,7 +42,7 @@ async function fetchFromGitHub(
   )
 }
 
-export async function getRepositories(): Promise<GitHubRepository[]> {
+export async function getRepositories() {
   let repositories: GitHubRepository[]
   let corscheidRepos: GitHubRepository[]
   let tireaRepos: GitHubRepository[]

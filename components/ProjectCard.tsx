@@ -1,12 +1,15 @@
 import Image from 'next/legacy/image'
-import { type ProjectCardProps } from '../interfaces'
+import { type GitHubRepository } from '@/lib/github'
 import { formatDate } from '../lib/date'
 import styles from './ProjectCard.module.css'
 
 export default function ProjectCard({
   repository,
   priority
-}: ProjectCardProps): JSX.Element {
+}: {
+  repository: GitHubRepository
+  priority: boolean
+}) {
   const { html_url, name, description, created_at, image_url } = repository
   return (
     <>

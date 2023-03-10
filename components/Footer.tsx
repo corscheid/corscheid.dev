@@ -9,12 +9,11 @@ import {
   TWITTER_URL
 } from '../lib/constants'
 
-import { type Hyperlink } from '../interfaces'
 import styles from './Footer.module.css'
 import FooterIconLink from './FooterIconLink'
 
 export default function Footer() {
-  const links: Hyperlink[] = [
+  const links = [
     { title: 'dev', href: DEV_URL },
     { title: 'keybase', href: KEYBASE_URL },
     { title: 'twitter', href: TWITTER_URL },

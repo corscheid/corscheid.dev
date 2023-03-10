@@ -1,10 +1,21 @@
 // Code from https://github.com/styfle/styfle.dev used with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/utils/posts.ts
 import { join, resolve } from 'path'
-
 import fs from 'fs'
 import matter from 'gray-matter'
-import { type BlogPost } from '../interfaces'
+
+export interface BlogPost {
+  title: string
+  slug: string
+  date: string
+  description: string
+  tags: string
+  cover_image: string
+  cover_alt: string
+  series: string
+  published: boolean
+  content: string
+}
 
 const { readFile, readdir } = fs.promises
 

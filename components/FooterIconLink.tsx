@@ -1,8 +1,13 @@
-import { type Hyperlink } from '../interfaces'
 import styles from './FooterIconLink.module.css'
 import SocialIcon from './SocialIcon'
 
-export default function FooterIconLink({ href, title }: Hyperlink) {
+export default function FooterIconLink({
+  href,
+  title
+}: {
+  title: string
+  href: string
+}) {
   return (
     <a
       className={styles.footerLink}

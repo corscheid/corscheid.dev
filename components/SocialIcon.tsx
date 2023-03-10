@@ -1,9 +1,6 @@
-import { type SocialIconProps } from '../interfaces'
 import styles from './SocialIcon.module.css'
 
-export default function SocialIcon({
-  name
-}: SocialIconProps): JSX.Element | null {
+export default function SocialIcon({ name }: { name: string }) {
   switch (name) {
     case 'dev':
       return (

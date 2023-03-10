@@ -1,10 +1,15 @@
 import Head from 'next/head'
-import { type LayoutProps } from '../interfaces'
 import { META_DESCRIPTION } from '../lib/constants'
 import Footer from './Footer'
 import Header from './Header'
 
-export default function Layout({ title, children }: LayoutProps) {
+export default function Layout({
+  title,
+  children
+}: {
+  title: string
+  children: React.ReactNode
+}) {
   return (
     <>
       <Head>
