@@ -1,5 +1,3 @@
-'use client'
-
 import marked from 'marked'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
