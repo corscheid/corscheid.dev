@@ -7,12 +7,19 @@
   padding-right: calc(50vw - 50%);
 }
 
-.flex {
+.links {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
   align-items: center;
-  height: 10em;
+  justify-content: center;
+  margin: 1rem 0 2rem 0;
+}
+
+.copy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .footerLink {

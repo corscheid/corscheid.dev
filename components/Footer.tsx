@@ -23,20 +23,16 @@ export default function Footer() {
   ]
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.flex}>
-          <div>
-            {links.map((link, idx) => (
-              <FooterIconLink title={link.title} href={link.href} key={idx} />
-            ))}
-          </div>
-          <div>
-            <a className={styles.footerLink} href={REPO_URL}>
-              {DOMAIN}
-            </a>
-            &copy; {new Date().getFullYear()}
-          </div>
-        </div>
+      <div className={styles.links}>
+        {links.map((link, idx) => (
+          <FooterIconLink title={link.title} href={link.href} key={idx} />
+        ))}
+      </div>
+      <div className={styles.copy}>
+        <a className={styles.footerLink} href={REPO_URL}>
+          {DOMAIN}
+        </a>
+        &copy; {new Date().getFullYear()}
       </div>
     </footer>
   )
