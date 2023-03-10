@@ -26,17 +26,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
           }
         `}</style>
       <div className="article-header">
-        <h1 itemProp="name headline">{title}</h1>
+        <h1>{title}</h1>
         <p className="article-date">
-          <time dateTime={date} itemProp="datePublished">
-            {formatDate(date)}
-          </time>
+          <time dateTime={date}>{formatDate(date)}</time>
         </p>
       </div>
 
       <div
         className="main-content"
-        itemProp="articleBody"
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
 

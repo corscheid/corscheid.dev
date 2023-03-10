@@ -26,11 +26,7 @@ export default async function Page() {
               </Link>
             </h2>
             <p className="post-meta">
-              <time
-                className="dt-published"
-                dateTime={date}
-                itemProp="datePublished"
-              >
+              <time className="dt-published" dateTime={date}>
                 {formatDate(date)}
               </time>
             </p>
@@ -44,7 +40,6 @@ export default async function Page() {
             />
             <div
               className="post-content e-content"
-              itemProp="articleBody"
               dangerouslySetInnerHTML={{
                 __html: marked(content.split('\n')[3])
               }}
