@@ -1,20 +1,11 @@
 // Code from https://github.com/styfle/styfle.dev adapted with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/%5Bslug%5D.tsx
-import hljs from 'highlight.js'
-import scss from 'highlight.js/lib/languages/scss'
-import shell from 'highlight.js/lib/languages/shell'
-import typescript from 'highlight.js/lib/languages/typescript'
 import Link from 'next/link'
-import { useEffect } from 'react'
 import Layout from '../../components/Layout'
 import type { Params, PostProps } from '../../interfaces'
 import { formatDate } from '../../lib/date'
 import { markdownToHtml } from '../../lib/markdown'
 import { getPosts } from '../../lib/posts'
-
-hljs.registerLanguage('typescript', typescript)
-hljs.registerLanguage('scss', scss)
-hljs.registerLanguage('shell', shell)
 
 export const getStaticPaths = async () => ({
   paths: (await getPosts()).map((p: { slug: string }) => `/blog/${p.slug}`),
@@ -38,9 +29,7 @@ export async function getStaticProps({
 
 export default function Post(props: PostProps) {
   const { slug, title, date, html } = props
-  useEffect(() => {
-    hljs.initHighlighting()
-  }, [])
+
   return (
     <Layout title={title}>
       <article>

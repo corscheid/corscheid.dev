@@ -64,8 +64,5 @@
   text-decoration: underline;
 }
 .main-content pre {
-  padding: 0;
-}
-.main-content pre code {
-  padding: 1em;
+  padding: 1rem;
 }
