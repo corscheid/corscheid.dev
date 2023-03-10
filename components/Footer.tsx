@@ -9,7 +9,6 @@ import {
   TWITTER_URL
 } from '../lib/constants'
 
-import styles from './Footer.module.css'
 import FooterIconLink from './FooterIconLink'
 
 export default function Footer() {
@@ -22,14 +21,17 @@ export default function Footer() {
     { title: 'facebook', href: FACEBOOK_URL }
   ]
   return (
-    <footer className={styles.footer}>
-      <div className={styles.links}>
+    <footer className="bg-[var(--nc-bg-2)] border-t border-[var(--nc-bg-3)] py-8 px-6 mt-8 mb-0 mx-[calc(0px-(50vw-50%))] pl-[calc(50vw-50%)] pr-[calc(50vw-50%)]">
+      <div className="flex flex-row items-center justify-center mt-4 mx-0 mb-8">
         {links.map((link, idx) => (
           <FooterIconLink title={link.title} href={link.href} key={idx} />
         ))}
       </div>
-      <div className={styles.copy}>
-        <a className={styles.footerLink} href={REPO_URL}>
+      <div className="flex flex-row item-center justify-center">
+        <a
+          className="my-0 mx-[0.5vw] no-underline text-inherit hover:border-b-0 hover:text-[var(--nc-ac-1)]"
+          href={REPO_URL}
+        >
           {DOMAIN}
         </a>
         &copy; {new Date().getFullYear()}
