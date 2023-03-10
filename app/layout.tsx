@@ -3,7 +3,6 @@ import Header from '@/components/Header'
 import { HOME, META_DESCRIPTION } from '@/lib/constants'
 import '@/styles/atom-one-dark.css'
 import '@/styles/globals.css'
-import 'highlight.js/styles/default.css'
 
 export const metadata = {
   title: HOME,

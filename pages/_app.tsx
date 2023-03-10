@@ -1,4 +1,3 @@
-import 'highlight.js/styles/default.css'
 import '../styles/atom-one-dark.css'
 import '../styles/globals.css'
 

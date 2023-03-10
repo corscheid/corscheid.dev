@@ -1,23 +1,17 @@
+'use client'
+
 // Code from https://github.com/styfle/styfle.dev adapted with permission of original author
 // Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/index.tsx
 import marked from 'marked'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
-import Layout from '../../components/Layout'
-import { type BlogProps } from '../../interfaces'
-import { BLOG } from '../../lib/constants'
-import { formatDate } from '../../lib/date'
-import { getPosts } from '../../lib/posts'
-
-export async function getStaticProps() {
-  const posts = await getPosts()
-  const sortedPosts = posts.sort((a, b) => b.date.localeCompare(a.date))
-  return { props: { posts: sortedPosts } }
-}
+import { type BlogProps } from '@/interfaces'
+import { BLOG } from '@/lib/constants'
+import { formatDate } from '@/lib/date'
 
 export default function Blog({ posts }: BlogProps) {
   return (
-    <Layout title={BLOG}>
+    <>
       <h1>{BLOG}</h1>
       {posts.map(
         ({ slug, title, date, cover_image, cover_alt, content }, idx) => (
@@ -58,6 +52,6 @@ export default function Blog({ posts }: BlogProps) {
           </article>
         )
       )}
-    </Layout>
+    </>
   )
 }
