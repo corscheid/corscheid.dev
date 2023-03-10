@@ -1,5 +1,3 @@
-// Code from https://github.com/styfle/styfle.dev adapted with permission of original author
-// Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/%5Bslug%5D.tsx
 import Post from '@/components/Post'
 import type { Params, PostProps } from '@/interfaces'
 import { markdownToHtml } from '@/lib/markdown'

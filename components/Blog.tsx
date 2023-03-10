@@ -1,7 +1,5 @@
 'use client'
 
-// Code from https://github.com/styfle/styfle.dev adapted with permission of original author
-// Original file: https://github.com/styfle/styfle.dev/blob/main/pages/blog/index.tsx
 import marked from 'marked'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
