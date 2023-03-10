@@ -1,4 +1,3 @@
-import styles from '@/styles/Home.module.css'
 export const metadata = {
   title: 'Home',
   description: 'Corey Scheideman - Home brewed dev'
@@ -7,7 +6,9 @@ export const metadata = {
 export default function Page() {
   return (
     <section>
-      <div className={styles.bigText}>&#60; &#47;&#62; &#123; &#125;</div>
+      <div className="text-4xl text-center mb-8">
+        &#60; &#47;&#62; &#123; &#125;
+      </div>
       <p>
         Hi, I&apos;m Corey and I&apos;m a Full Stack Web Developer in the Saint
         Louis, Missouri area.
