@@ -1,6 +1,7 @@
 import { formatDate } from '@/lib/date'
 import { markdownToHtml } from '@/lib/markdown'
 import { getPosts } from '@/lib/posts'
+import styles from '@/styles/BlogPost.module.css'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -15,33 +16,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <article>
-      <style>{`
-          .article-header h1 {
-            margin-bottom: 8px;
-          }
-          .article-date {
-            fontsize: 1em;
-            margin-bottom: 2rem;
-            text-align: center;
-          }
-        `}</style>
-      <div className="article-header">
-        <h1>{title}</h1>
-        <p className="article-date">
+      <div id="article-header">
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.date}>
           <time dateTime={date}>{formatDate(date)}</time>
         </p>
       </div>
 
-      <div
-        className="main-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></div>
+      <div id="main-content" dangerouslySetInnerHTML={{ __html: html }} />
 
-      <a href={`/blog/${slug}`} hidden></a>
+      <a href={`/blog/${slug}`} hidden />
 
-      <a href="#">&uarr; Up to top</a>
-      <br />
-      <br />
+      <a href="#" className={styles.up}>
+        &uarr; Up to top
+      </a>
+
       <Link href="/blog" legacyBehavior>
         <a>&larr; Back to blog</a>
       </Link>

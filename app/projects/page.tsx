@@ -1,6 +1,7 @@
 import ProjectCard from '@/components/ProjectCard'
 import { DOMAIN, PROJECTS } from '@/lib/constants'
 import { getRepositories } from '@/lib/github'
+import styles from '@/styles/Projects.module.css'
 
 export const metadata = {
   title: 'Projects',
@@ -13,14 +14,7 @@ export default async function Page() {
   return (
     <>
       <h1>{PROJECTS}</h1>
-      <div className="card-grid">
-        <style>{`
-          .card-grid {
-            display: grid;
-            grid-gap: 1rem;
-            grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
-          }
-        `}</style>
+      <div className={styles.cardGrid}>
         {projects.map((project, idx) => (
           <ProjectCard repository={project} key={idx} priority={idx < 5} />
         ))}
