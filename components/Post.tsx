@@ -34,7 +34,7 @@ export default function Post(props: PostProps) {
 
       <a href={`/blog/${slug}`} hidden></a>
 
-      <a href="#__next">&uarr; Up to top</a>
+      <a href="#">&uarr; Up to top</a>
       <br />
       <br />
       <Link href="/blog" legacyBehavior>
