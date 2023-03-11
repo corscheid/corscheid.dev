@@ -16,6 +16,7 @@ export default function ThemeSwitcher() {
             name="dark-mode"
             className={styles.checkbox}
             checked={theme === 'dark'}
+            readOnly
           />
           <div className={styles.handle} />
         </label>
