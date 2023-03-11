@@ -4,7 +4,6 @@ import { BLOG, CONTACT, HOME, PROJECTS } from '../lib/constants'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import styles from './Navigation.module.css'
 import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Navigation() {
@@ -15,22 +14,26 @@ export default function Navigation() {
     { name: PROJECTS, dest: '/projects' },
     { name: CONTACT, dest: '/contact' }
   ]
+
+  const isActive = (name: string, dest: string) =>
+    pathname === dest || (name === BLOG && pathname?.includes(dest))
+
   return (
-    <nav className={styles.nav}>
+    <nav className="flex flex-row flex-wrap leading-[3rem] justify-center items-center sm:justify-start">
       {links.map(({ name, dest }) => (
-        <div className={styles.navItem} key={name}>
+        <div key={name}>
           <Link href={dest} legacyBehavior>
             <a
               className={
-                pathname === dest || (name === BLOG && pathname?.includes(dest))
-                  ? `${styles.active} ${styles.navLink}`
-                  : styles.navLink
+                isActive(name, dest)
+                  ? 'font-bold border-b-2 border-[var(--nc-lk-1)] border-solid text-lg hover:no-underline'
+                  : 'text-lg hover:border-b-2 hover:border-solid'
               }
             >
               {name}
             </a>
           </Link>
-          <span className={styles.divider}>|</span>
+          <span className="p-2">|</span>
         </div>
       ))}
       <ThemeSwitcher />
