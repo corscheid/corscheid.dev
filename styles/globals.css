@@ -387,7 +387,12 @@ img {
 }
 
 /* Custom */
-body,
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
 .container {
   max-width: 750px;
   margin: 0 auto;
