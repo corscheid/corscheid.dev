@@ -27,7 +27,7 @@ export default function Navigation() {
               className={
                 isActive(name, dest)
                   ? 'font-bold border-b-2 border-[var(--nc-lk-1)] border-solid text-lg hover:no-underline'
-                  : 'text-lg hover:border-b-2 hover:border-solid'
+                  : 'text-lg hover:border-b-2 hover:border-[var(--nc-lk-1)] hover:border-solid'
               }
             >
               {name}
