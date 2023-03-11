@@ -28,6 +28,7 @@ export default function ProjectCard({
           src={image_url}
           alt={name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={priority}
           loading={priority ? 'eager' : 'lazy'}
         />
