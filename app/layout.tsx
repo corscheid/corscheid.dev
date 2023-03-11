@@ -2,7 +2,6 @@ import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { DOMAIN, META_DESCRIPTION } from '@/lib/constants'
 import { ThemeProvider } from '@/lib/theme-context'
-import '@/styles/font-awesome/all.min.css'
 import '@/styles/globals.css'
 
 export const metadata = {
