@@ -1,17 +1,25 @@
+'use client'
+
 import styles from '@/components/ThemeSwitcher.module.css'
-import { ThemeContext } from '../lib/theme-context'
+import { useTheme } from '../lib/theme-context'
 
 export default function ThemeSwitcher() {
+  const { theme, toggle } = useTheme()
+
   return (
-    <ThemeContext.Consumer>
-      {({ icon, toggle }) => (
-        <>
-          <div className={styles.toggle} onClick={toggle}>
-            <i className={`${icon} ${styles.icon}`}></i>
-            Theme
-          </div>
-        </>
-      )}
-    </ThemeContext.Consumer>
+    <div className={styles.container} onClick={toggle}>
+      <span className={styles.label}>Dark mode</span>
+      <div className={styles.slide}>
+        <label>
+          <input
+            type="checkbox"
+            name="dark-mode"
+            className={styles.checkbox}
+            checked={theme === 'dark'}
+          />
+          <div className={styles.handle} />
+        </label>
+      </div>
+    </div>
   )
 }

@@ -1,5 +1,9 @@
-.toggle {
-  width: 4.5em;
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.label {
   color: var(--nc-lk-1);
   cursor: pointer;
   -webkit-touch-callout: none;
@@ -11,6 +15,33 @@
   user-select: none;
 }
 
-.icon {
-  padding-right: 0.25em;
+.slide {
+  width: 2rem;
+  height: 1rem;
+  background: var(--nc-lk-1);
+  margin: 1rem 0.5rem;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.checkbox {
+  visibility: hidden;
+}
+
+.handle {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  transition: all .25s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #d4d4d4;
+}
+
+.checkbox:checked + .handle {
+  left: 1rem;
+  background: #fff;
 }
