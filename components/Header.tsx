@@ -2,7 +2,7 @@
 
 import { NAME, TAGLINE } from '../lib/constants'
 
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import Navigation from './Navigation'
 
 export default function Header() {
@@ -21,7 +21,6 @@ export default function Header() {
             className="p-0 my-4 mx-0 self-center rounded-full"
             src={'/images/profile.jpg'}
             alt={name}
-            layout="responsive"
             width={96}
             height={96}
             loading="eager"
