@@ -1,7 +1,7 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import { DOMAIN, META_DESCRIPTION } from '@/lib/constants'
-import { ThemeProvider } from '@/lib/theme-context'
+import { DOMAIN, META_DESCRIPTION } from '@/utils/constants'
+import { ThemeProvider } from '@/utils/theme-context'
 import '@/styles/globals.css'
 
 export const metadata = {

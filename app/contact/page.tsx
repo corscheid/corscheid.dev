@@ -5,7 +5,7 @@ import {
   KEYBASE_URL,
   LINKEDIN_URL,
   TWITTER_URL
-} from '@/lib/constants'
+} from '@/utils/constants'
 
 export const metadata = {
   title: 'Contact',

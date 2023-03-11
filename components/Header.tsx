@@ -1,6 +1,6 @@
 'use client'
 
-import { NAME, TAGLINE } from '../lib/constants'
+import { NAME, TAGLINE } from '../utils/constants'
 
 import Image from 'next/image'
 import Navigation from './Navigation'

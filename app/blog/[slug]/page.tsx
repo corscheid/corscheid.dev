@@ -1,6 +1,6 @@
-import { formatDate } from '@/lib/date'
-import { markdownToHtml } from '@/lib/markdown'
-import { getPosts } from '@/lib/posts'
+import { formatDate } from '@/utils/date'
+import { markdownToHtml } from '@/utils/markdown'
+import { getPosts } from '@/utils/posts'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 

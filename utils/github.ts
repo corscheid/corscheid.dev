@@ -1,5 +1,5 @@
 import { existsSync, promises } from 'fs'
-import { DUMMY_IMG_URL } from '../lib/constants'
+import { DUMMY_IMG_URL } from './constants'
 const { writeFile, readFile } = promises
 
 export interface GitHubRepository {

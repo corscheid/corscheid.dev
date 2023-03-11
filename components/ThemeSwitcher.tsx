@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '@/components/ThemeSwitcher.module.css'
-import { useTheme } from '../lib/theme-context'
+import { useTheme } from '../utils/theme-context'
 
 export default function ThemeSwitcher() {
   const { theme, toggle } = useTheme()

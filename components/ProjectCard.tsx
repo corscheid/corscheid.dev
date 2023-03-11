@@ -1,6 +1,6 @@
-import { type GitHubRepository } from '@/lib/github'
+import { type GitHubRepository } from '@/utils/github'
 import Image from 'next/image'
-import { formatDate } from '../lib/date'
+import { formatDate } from '../utils/date'
 
 export default function ProjectCard({
   repository,

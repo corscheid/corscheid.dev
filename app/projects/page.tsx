@@ -1,6 +1,6 @@
 import ProjectCard from '@/components/ProjectCard'
-import { DOMAIN, PROJECTS } from '@/lib/constants'
-import { getRepositories } from '@/lib/github'
+import { DOMAIN, PROJECTS } from '@/utils/constants'
+import { getRepositories } from '@/utils/github'
 
 export const metadata = {
   title: 'Projects',

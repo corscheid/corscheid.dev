@@ -1,6 +1,6 @@
 'use client'
 
-import { BLOG, CONTACT, HOME, PROJECTS } from '../lib/constants'
+import { BLOG, CONTACT, HOME, PROJECTS } from '../utils/constants'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

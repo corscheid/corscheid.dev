@@ -7,7 +7,7 @@ import {
   LINKEDIN_URL,
   REPO_URL,
   TWITTER_URL
-} from '../lib/constants'
+} from '../utils/constants'
 
 import FooterIconLink from './FooterIconLink'
 
