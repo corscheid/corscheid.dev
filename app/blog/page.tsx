@@ -1,7 +1,7 @@
 import { BLOG, DOMAIN } from '@/utils/constants'
 import { formatDate } from '@/utils/date'
 import { getPosts } from '@/utils/posts'
-import marked from 'marked'
+import { marked } from 'marked'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -41,7 +41,7 @@ export default async function Page() {
             <div
               className="post-content e-content"
               dangerouslySetInnerHTML={{
-                __html: marked(content.split('\n')[3])
+                __html: marked.parse(content.split('\n')[3])
               }}
             ></div>
             <Link href="/blog/[slug]" as={`/blog/${slug}`}>
