@@ -1,7 +1,8 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import { DOMAIN, META_DESCRIPTION } from '@/lib/constants'
-import '@/styles/atom-one-dark.css'
+import { ThemeProvider } from '@/lib/theme-context'
+import '@/styles/font-awesome/all.min.css'
 import '@/styles/globals.css'
 
 export const metadata = {
@@ -15,12 +16,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        <main className="container">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en">
+        <body>
+          <Header />
+          <main className="container">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </ThemeProvider>
   )
 }
