@@ -21,8 +21,8 @@ export default async function Page() {
         ({ slug, title, date, cover_image, cover_alt, content }, idx) => (
           <article key={slug}>
             <h2>
-              <Link href="/blog/[slug]" as={`/blog/${slug}`} legacyBehavior>
-                <a>{title}</a>
+              <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+                {title}
               </Link>
             </h2>
             <p className="post-meta">
@@ -44,8 +44,8 @@ export default async function Page() {
                 __html: marked(content.split('\n')[3])
               }}
             ></div>
-            <Link href="/blog/[slug]" as={`/blog/${slug}`} legacyBehavior>
-              <a>Read more &rarr;</a>
+            <Link href="/blog/[slug]" as={`/blog/${slug}`}>
+              Read more &rarr;
             </Link>
             <hr />
           </article>

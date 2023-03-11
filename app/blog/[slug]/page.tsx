@@ -30,9 +30,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         &uarr; Up to top
       </a>
 
-      <Link href="/blog" legacyBehavior>
-        <a>&larr; Back to blog</a>
-      </Link>
+      <Link href="/blog">&larr; Back to blog</Link>
     </article>
   )
 }
