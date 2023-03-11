@@ -13,7 +13,7 @@ export default async function Page() {
   return (
     <>
       <h1>{PROJECTS}</h1>
-      <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(16em,1fr))]">
+      <div className="grid gap-8 grid-cols-[repeat(auto-fill,minmax(16em,1fr))]">
         {projects.map((project, idx) => (
           <ProjectCard repository={project} key={idx} priority={idx < 5} />
         ))}
