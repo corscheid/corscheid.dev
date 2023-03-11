@@ -2,7 +2,7 @@ import { BLOG, DOMAIN } from '@/lib/constants'
 import { formatDate } from '@/lib/date'
 import { getPosts } from '@/lib/posts'
 import marked from 'marked'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata = {
