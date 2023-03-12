@@ -1,8 +1,8 @@
 'use client'
 
-import { NAME, TAGLINE } from '../utils/constants'
-
+import profile from '@/public/images/profile.jpg'
 import Image from 'next/image'
+import { NAME, TAGLINE } from '../utils/constants'
 import Navigation from './Navigation'
 
 export default function Header() {
@@ -19,7 +19,7 @@ export default function Header() {
         <div className="relative max-w-full h-full">
           <Image
             className="p-0 my-4 mx-0 self-center rounded-full"
-            src={'/images/profile.jpg'}
+            src={profile}
             alt={name}
             width={96}
             height={96}
