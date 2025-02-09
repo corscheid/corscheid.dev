@@ -1,5 +1,5 @@
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
+// import Footer from '@/components/Footer'
+// import Header from '@/components/Header'
 import { DOMAIN, META_DESCRIPTION } from '@/utils/constants'
 import { ThemeProvider } from '@/utils/theme-context'
 import '@/styles/globals.css'
@@ -18,9 +18,9 @@ export default function RootLayout({
     <ThemeProvider>
       <html lang="en">
         <body>
-          <Header />
+          {/* <Header /> */}
           <main className="container">{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </body>
       </html>
     </ThemeProvider>
