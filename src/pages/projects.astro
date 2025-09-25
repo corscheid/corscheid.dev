@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const projects = await getCollection("projects");
+
+function formatDate(dateString: string) {
+  const postDate = new Date(dateString);
+  const year = postDate.getFullYear();
+  const month =
+    postDate.getMonth() + 1 < 10
+      ? `0${postDate.getMonth() + 1}`
+      : `${postDate.getMonth() + 1}`;
+  const day =
+    postDate.getDate() < 10
+      ? `0${postDate.getDate()}`
+      : `${postDate.getDate()}`;
+  return `${year}-${month}-${day}`;
+}
+---
+
+<Layout title="projects">
+  <article class="min-h-dvh p-4">
+    <div
+      class="flex flex-col flex-wrap items-center gap-4 lg:flex-row lg:justify-center"
+    >
+      {
+        projects.map((project, i) => (
+          <div
+            class="flex h-96 w-96 flex-col rounded-2xl bg-[hsl(0,0%,15%)] pb-4"
+            data-id={project.data.id}
+          >
+            <Image
+              src={project.data.image_url}
+              alt={project.data.name}
+              width={400}
+              height={300}
+              style="height: 12rem; border-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+              priority={i < 6}
+              loading={i < 6 ? "eager" : "lazy"}
+            />
+            <div class="p-4 pb-0">
+              <h2 class="p-0 text-[hsl(120,100%,45%)]">{project.data.name}</h2>
+              <time datetime={project.data.created_at}>
+                {formatDate(project.data.created_at)}
+              </time>
+              <p>{project.data.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</Layout>

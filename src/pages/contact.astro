@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="contact">
+  <section class="flex flex-col items-center">
+    <form method="POST" class="flex w-96 flex-col gap-4">
+      <label class="flex flex-col gap-2">
+        name
+        <input type="text" name="name" class="rounded-md bg-neutral-800 p-2" />
+      </label>
+
+      <label class="flex flex-col gap-2">
+        email
+        <input
+          type="email"
+          name="email"
+          class="rounded-md bg-neutral-800 p-2"
+        />
+      </label>
+
+      <label class="flex flex-col gap-2">
+        message
+        <textarea name="message" rows={5} class="rounded-md bg-neutral-800 p-2"
+        ></textarea>
+      </label>
+
+      <button type="submit" class="rounded bg-[hsl(220,80%,66%)] p-2 text-white"
+        >submit</button
+      >
+    </form>
+  </section>
+</Layout>

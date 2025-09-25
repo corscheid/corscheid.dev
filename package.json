@@ -1,39 +1,24 @@
 {
   "name": "corscheid.dev",
-  "version": "1.0.0",
-  "repository": "https://github.com/corscheid/corscheid.dev",
-  "license": "MIT",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "gray-matter": "^4.0.2",
-    "highlight.js": "^10.6.0",
-    "marked": "^4.2.12",
-    "next": "13.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@playform/compress": "^0.2.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.9",
+    "astro-compressor": "^1.1.2",
+    "tailwindcss": "^4.1.13"
   },
+  "packageManager": "pnpm@10.17.0+sha512.fce8a3dd29a4ed2ec566fb53efbb04d8c44a0f05bc6f24a73046910fb9c3ce7afa35a0980500668fa3573345bd644644fa98338fa168235c80f4aa17aa17fbef",
   "devDependencies": {
-    "@types/marked": "^4.0.8",
-    "@types/node": "18.14.6",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
-    "autoprefixer": "^10.4.14",
-    "eslint": "8.35.0",
-    "eslint-config-next": "13.2.3",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "postcss": "^8.4.21",
-    "prettier": "^2.2.1",
-    "tailwindcss": "^3.2.7",
-    "typescript": "4.9.5"
-  },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.14"
+  }
 }

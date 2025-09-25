@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await getCollection("blog", ({ data }) => data.published);
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="posts">
+  <article class="min-h-dvh p-4">
+    <div
+      class="flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:items-center lg:justify-center"
+    >
+      {
+        posts.map((post, i) => (
+          <div
+            class="post-card flex h-96 w-96 cursor-pointer flex-col rounded-2xl bg-[hsl(0,0%,15%)] pb-4"
+            data-id={post.data.slug}
+          >
+            <Image
+              src={post.data.image.src}
+              alt={post.data.image.alt}
+              width={400}
+              height={200}
+              style="height:200px; border-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+              loading={i < 10 ? "eager" : "lazy"}
+            />
+            <div class="flex flex-col gap-4 p-4 pb-0">
+              <a
+                href={`/posts/${post.data.slug}`}
+                class="text-[hsl(120,100%,45%)]"
+              >
+                {post.data.title}
+              </a>
+              <p>{post.data.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </article>
+</Layout>
+
+<script>
+  (function () {
+    const postCards = document.getElementsByClassName("post-card");
+    if (!postCards) return;
+    for (const card of postCards) {
+      card.addEventListener("click", function () {
+        const slug = card.getAttribute("data-id");
+        if (!slug) return;
+        window.location.href = `/posts/${slug}`;
+      });
+    }
+  })();
+</script>
