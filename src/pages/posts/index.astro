@@ -13,11 +13,11 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
   description="Blog posts index - corscheid.dev - portfolio site of Corey Scheideman, web developer"
 >
   <article class="min-h-dvh p-4">
-    <div class="flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:items-center lg:justify-center">
+    <div class="flex flex-col items-center gap-4 md:flex-row md:flex-wrap md:items-center md:justify-center">
       {
         posts.map((post, i) => (
           <div
-            class="post-card flex h-96 w-96 cursor-pointer flex-col rounded-2xl bg-[hsl(0,0%,15%)] pb-4"
+            class="post-card flex h-96 w-full cursor-pointer flex-col rounded-2xl bg-[hsl(0,0%,15%)] pb-4 sm:w-96"
             data-id={post.data.slug}
           >
             <Image
@@ -25,7 +25,7 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
               alt={post.data.image.alt}
               width={400}
               height={200}
-              style="height:200px; border-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+              style="height: 12rem; width: 100%; border-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
               loading={i < 10 ? "eager" : "lazy"}
             />
             <div class="flex flex-col gap-4 p-4 pb-0">
