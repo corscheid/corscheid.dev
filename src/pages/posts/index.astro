@@ -9,9 +9,7 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 <Layout title="posts">
   <article class="min-h-dvh p-4">
-    <div
-      class="flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:items-center lg:justify-center"
-    >
+    <div class="flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:items-center lg:justify-center">
       {
         posts.map((post, i) => (
           <div
@@ -27,10 +25,7 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
               loading={i < 10 ? "eager" : "lazy"}
             />
             <div class="flex flex-col gap-4 p-4 pb-0">
-              <a
-                href={`/posts/${post.data.slug}`}
-                class="text-[hsl(120,100%,45%)]"
-              >
+              <a href={`/posts/${post.data.slug}`} class="text-[hsl(120,100%,45%)]">
                 {post.data.title}
               </a>
               <p>{post.data.description}</p>

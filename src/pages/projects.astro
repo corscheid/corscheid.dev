@@ -8,15 +8,10 @@ const projects = await getCollection("projects");
 
 <Layout title="projects">
   <article class="min-h-dvh p-4">
-    <div
-      class="flex flex-col flex-wrap items-center gap-4 lg:flex-row lg:justify-center"
-    >
+    <div class="flex flex-col flex-wrap items-center gap-4 lg:flex-row lg:justify-center">
       {
         projects.map((project, i) => (
-          <div
-            class="flex h-96 w-full flex-col rounded-2xl bg-[hsl(0,0%,15%)] pb-4 sm:w-96"
-            data-id={project.data.id}
-          >
+          <div class="flex h-96 w-full flex-col rounded-2xl bg-[hsl(0,0%,15%)] pb-4 sm:w-96" data-id={project.data.id}>
             <Image
               src={project.data.image_url}
               alt={project.data.name}
@@ -28,9 +23,7 @@ const projects = await getCollection("projects");
             />
             <div class="flex flex-col gap-4 p-4">
               <div class="flex flex-col gap-2">
-                <h2 class="p-0 text-2xl text-[hsl(120,100%,45%)]">
-                  {project.data.name}
-                </h2>
+                <h2 class="p-0 text-2xl text-[hsl(120,100%,45%)]">{project.data.name}</h2>
               </div>
               <p>{project.data.description}</p>
             </div>
