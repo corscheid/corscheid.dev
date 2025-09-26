@@ -15,7 +15,10 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout title={`${post.data.title} - corscheid.dev`}>
+<Layout
+  title={`${post.data.title} - corscheid.dev`}
+  description={`Blog Post: ${post.data.title} - ${post.data.description} - corscheid.dev - portfolio site of Corey Scheideman, web developer`}
+>
   <article class="post flex flex-col gap-4 p-4">
     <div class="flex flex-col items-center gap-4">
       <h1 class="text-2xl">{post.data.title}</h1>

@@ -6,7 +6,11 @@ import Layout from "../layouts/Layout.astro";
 const projects = await getCollection("projects");
 ---
 
-<Layout title="Projects - corscheid.dev" heading="Projects">
+<Layout
+  title="Projects - corscheid.dev"
+  heading="Projects"
+  description="Projects directory - corscheid.dev - portfolio site of Corey Scheideman, web developer"
+>
   <article class="min-h-dvh p-4">
     <div class="flex flex-col flex-wrap items-center gap-4 lg:flex-row lg:justify-center">
       {

@@ -7,7 +7,11 @@ const posts = await getCollection("blog", ({ data }) => data.published);
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="Posts - corscheid.dev" heading="Posts">
+<Layout
+  title="Posts - corscheid.dev"
+  heading="Posts"
+  description="Blog posts index - corscheid.dev - portfolio site of Corey Scheideman, web developer"
+>
   <article class="min-h-dvh p-4">
     <div class="flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:items-center lg:justify-center">
       {

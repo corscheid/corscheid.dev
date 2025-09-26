@@ -6,15 +6,16 @@ import Nav from "../components/Nav.astro";
 
 interface Props {
   title: string;
+  description: string;
   heading?: string;
 }
 
-const { title, heading }: Props = Astro.props;
+const { title, description, heading }: Props = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} />
+    <BaseHead title={title} description={description} />
   </head>
   <body class="flex h-screen flex-col bg-[hsl(0,0%,25%)]">
     <Nav />
