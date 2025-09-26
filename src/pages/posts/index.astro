@@ -17,7 +17,7 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
       {
         posts.map((post, i) => (
           <div
-            class="post-card flex h-96 w-full cursor-pointer flex-col rounded-2xl bg-[hsl(0,0%,15%)] pb-4 sm:w-96"
+            class="post-card flex h-96 w-full cursor-pointer flex-col rounded-2xl bg-gray-700 pb-4 sm:w-96"
             data-id={post.data.slug}
           >
             <Image
@@ -29,7 +29,7 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
               loading={i < 10 ? "eager" : "lazy"}
             />
             <div class="flex flex-col gap-4 p-4 pb-0">
-              <a href={`/posts/${post.data.slug}`} class="text-[hsl(120,100%,45%)]">
+              <a href={`/posts/${post.data.slug}`} class="text-green-400">
                 {post.data.title}
               </a>
               <p>{post.data.description}</p>

@@ -17,9 +17,9 @@ const { title, description, heading }: Props = Astro.props;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body class="flex h-screen flex-col bg-[hsl(0,0%,25%)]">
+  <body class="flex h-screen flex-col bg-gray-500">
     <Nav />
-    <main class="flex-1 bg-[hsl(0,0%,25%)] text-gray-300">
+    <main class="flex-1 bg-gray-500 text-gray-300">
       {heading && <h1 class="pt-4 text-center text-2xl">{heading}</h1>}
       <slot />
     </main>
