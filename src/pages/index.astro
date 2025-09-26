@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Angular from "../assets/angular.svg";
 import AstroLogo from "../assets/astro.svg";
+import Corscheid from "../assets/corscheid.jpg";
 import Docker from "../assets/docker.svg";
 import GitHub from "../assets/github-mark.svg";
 import GitLab from "../assets/gitlab.svg";
@@ -19,17 +21,31 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <article>
-    <section class="bg-[hsl(0,0%,20%)] p-4 lg:px-64">
-      <h2 class="m-0 p-0 font-mono text-xl">
-        Hi, I'm <span class="text-[hsl(197,93%,53%)]">Corey</span>, a <span
-          class="text-[hsl(120,100%,45%)]">Full Stack Web Developer</span
-        >.
-      </h2>
-      <p class="mt-4">
-        I've been developing software for fun since 2012 and professionally
-        since 2021. Here is some tech that I have experience with and enjoy
-        using:
-      </p>
+    <section
+      class="flex flex-col items-center gap-12 bg-[hsl(0,0%,20%)] p-4 py-16 md:flex-row md:gap-4 md:px-64"
+    >
+      <div>
+        <Image
+          src={Corscheid}
+          alt="profile picture"
+          width={200}
+          height={200}
+          loading="eager"
+          class="rounded-full"
+        />
+      </div>
+      <div>
+        <h2 class="m-0 p-0 font-mono text-xl">
+          Hi, I'm <span class="text-[hsl(197,93%,53%)]">Corey</span>, a <span
+            class="text-[hsl(120,100%,45%)]">Full Stack Web Developer</span
+          >.
+        </h2>
+        <p class="mt-4">
+          I've been developing software for fun since 2012 and professionally
+          since 2021.
+        </p>
+        <p>Here is some tech that I have experience with and enjoy using:</p>
+      </div>
     </section>
 
     <section class="bg-[hsl(0,0%,15%)] p-4 lg:px-64">
