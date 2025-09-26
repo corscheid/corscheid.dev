@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  imgSrc: string;
+  imgAlt: string;
+  imgPriority: boolean;
+  title: string;
+  url: string;
+  description: string | null;
+  _class?: string;
+  dataId?: string;
+}
+
+const { imgSrc, imgAlt, imgPriority, title, url, description, _class, dataId }: Props = Astro.props;
+---
+
+<div
+  class={`${_class ?? ""} flex h-96 w-full cursor-pointer flex-col rounded-2xl bg-gray-700 pb-4 sm:w-96`}
+  data-id={dataId}
+>
+  <Image
+    src={imgSrc}
+    alt={imgAlt}
+    width={400}
+    height={300}
+    style="height: 12rem; width: 100%; border-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+    priority={imgPriority}
+    loading={imgPriority ? "eager" : "lazy"}
+  />
+  <div class="flex flex-col gap-4 p-4">
+    <a href={url} class="text-green-400">
+      <h2 class="text-2xl">{title}</h2>
+    </a>
+    <p>{description ?? ""}</p>
+  </div>
+</div>

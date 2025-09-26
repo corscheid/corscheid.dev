@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import Card from "../../components/Card.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const posts = await getCollection("blog", ({ data }) => data.published);
@@ -16,25 +16,16 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
     <div class="flex flex-col items-center gap-4 md:flex-row md:flex-wrap md:items-center md:justify-center">
       {
         posts.map((post, i) => (
-          <div
-            class="post-card flex h-96 w-full cursor-pointer flex-col rounded-2xl bg-gray-700 pb-4 sm:w-96"
-            data-id={post.data.slug}
-          >
-            <Image
-              src={post.data.image.src}
-              alt={post.data.image.alt}
-              width={400}
-              height={200}
-              style="height: 12rem; width: 100%; border-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
-              loading={i < 10 ? "eager" : "lazy"}
-            />
-            <div class="flex flex-col gap-4 p-4 pb-0">
-              <a href={`/posts/${post.data.slug}`} class="text-green-400">
-                {post.data.title}
-              </a>
-              <p>{post.data.description}</p>
-            </div>
-          </div>
+          <Card
+            imgSrc={post.data.image.src}
+            imgAlt={post.data.image.alt}
+            imgPriority={i < 10}
+            title={post.data.title}
+            url={`/posts/${post.data.slug}`}
+            description={post.data.description}
+            _class="post-card"
+            dataId={post.data.slug}
+          />
         ))
       }
     </div>
