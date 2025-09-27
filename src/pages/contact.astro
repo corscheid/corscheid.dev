@@ -48,9 +48,9 @@ if (Astro.request.method === "POST") {
   heading="Contact"
   description="Contact form - corscheid.dev - portfolio site of Corey Scheideman, web developer"
 >
-  <section class="flex flex-col items-center">
+  <section class="flex flex-col items-center p-4">
     {isSuccess && <div>Thanks for your message!</div>}
-    <form method="POST" class="flex w-96 flex-col gap-4">
+    <form method="POST" class="flex w-full flex-col gap-4 sm:w-96">
       <label class="flex flex-col gap-2">
         name
         <input type="text" name="name" class="rounded-md bg-neutral-800 p-2" />
