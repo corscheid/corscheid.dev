@@ -27,16 +27,14 @@
      transform="translate(-75.000002,-118.5)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#1a1a1a;fill-opacity:1;stroke-width:0.264999;stroke-dasharray:none"
-       x="78.329987"
-       y="-144.96941"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#1a1a1a;fill-opacity:1;stroke-width:0.264999;stroke-dasharray:none"
+       x="74.519989"
+       y="-130.1104"
        id="text1005"
        transform="scale(1,-1)"><tspan
          id="tspan1003"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#00e600;fill-opacity:1;stroke-width:0.265"
-         x="78.329987"
-         y="-144.96941">&lt;&gt;<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#17b3f2;fill-opacity:1"
-   id="tspan1109">{}</tspan>&lt;/&gt;</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.8px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#00e600;fill-opacity:1;stroke-width:0.265"
+         x="74.519989"
+         y="-130.1104">&lt;&gt;</tspan></text>
   </g>
 </svg>
