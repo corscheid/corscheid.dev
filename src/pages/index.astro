@@ -22,7 +22,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Home - corscheid.dev" description="corscheid.dev - portfolio site of Corey Scheideman, web developer">
   <article>
-    <section class="flex flex-col items-center gap-12 bg-gray-600 p-4 py-16 md:flex-row md:gap-8 md:px-64">
+    <section class="flex flex-col items-center gap-12 bg-gray-600 p-4 py-16 lg:flex-row lg:gap-8 lg:px-64">
       <div>
         <Image
           src={Corscheid}
@@ -35,20 +35,20 @@ import Layout from "../layouts/Layout.astro";
         />
       </div>
       <div>
-        <h2 class="m-0 p-0 font-mono text-xl">
+        <h2 class="mb-4 p-0 font-mono text-xl">
           Hi, I'm <span class="text-blue-400">Corey</span>, a <span class="text-green-400"
             >Full Stack Web Developer</span
           >.
         </h2>
         <p class="mt-4">I've been developing software for fun since 2012 and professionally since 2021.</p>
-        <p>Here is some tech that I have experience with and enjoy using:</p>
+        <p class="mt-4">Here is some tech that I have experience with and enjoy using:</p>
       </div>
     </section>
 
     <section class="bg-gray-700 p-4 lg:px-64">
-      <h2 class="m-0 p-0 font-mono text-xl">Frontend</h2>
+      <h2 class="mb-4 p-0 font-mono text-xl">Frontend</h2>
 
-      <ul class="m-0 flex flex-wrap gap-4 p-4">
+      <ul class="m-0 flex flex-wrap gap-4">
         <li class="flex w-24 flex-col items-center gap-4 rounded-2xl bg-gray-400 p-8">
           <React aria-label="React" width={48} height={48} /> React
         </li>
@@ -74,9 +74,9 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section class="bg-gray-600 p-4 lg:px-64">
-      <h2 class="m-0 p-0 font-mono text-xl">Backend</h2>
+      <h2 class="mb-4 p-0 font-mono text-xl">Backend</h2>
 
-      <ul class="m-0 flex flex-wrap gap-4 p-4">
+      <ul class="m-0 flex flex-wrap gap-4">
         <li class="flex w-24 flex-col items-center gap-4 rounded-2xl bg-gray-400 p-8">
           <Go aria-label="React" width={48} height={48} /> Go
         </li>
@@ -108,9 +108,9 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section class="bg-gray-700 p-4 lg:px-64">
-      <h2 class="m-0 p-0 font-mono text-xl">Containerization & CI/CD</h2>
+      <h2 class="mb-4 p-0 font-mono text-xl">Containerization & CI/CD</h2>
 
-      <ul class="m-0 flex flex-wrap gap-4 p-4">
+      <ul class="m-0 flex flex-wrap gap-4">
         <li class="flex w-24 flex-col items-center gap-4 rounded-2xl bg-gray-400 p-8">
           <Docker aria-label="Docker" width={48} height={48} /> Docker
         </li>
