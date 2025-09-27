@@ -21,6 +21,16 @@ function getImageURL(repo: GitHubRepository) {
   return `${DUMMY_IMG_URL}/?text=${repo.name}`;
 }
 
+function compareProjectIndex(
+  a: GitHubRepository,
+  b: GitHubRepository,
+  includeList: string[],
+) {
+  const aIndex = includeList.indexOf(a.name);
+  const bIndex = includeList.indexOf(b.name);
+  return aIndex < bIndex ? -1 : 1;
+}
+
 function compareProjectDates(a: GitHubRepository, b: GitHubRepository) {
   const aDate = new Date(a.created_at);
   const bDate = new Date(b.created_at);
@@ -53,10 +63,23 @@ export async function getRepositories() {
   } else {
     repositories = [];
 
+    fwewOrgRepos = await fetchFromGitHub("orgs", "fwew", PROJECTS_INCLUDE.fwew);
+    fwewOrgRepos.sort((a, b) =>
+      compareProjectIndex(a, b, PROJECTS_INCLUDE.fwew),
+    );
+    fwewOrgRepos.forEach((repo) => {
+      repo.image_url = getImageURL(repo);
+      const { html_url, name, created_at, image_url, description } = repo;
+      repositories.push({ html_url, name, created_at, image_url, description });
+    });
+
     corscheidRepos = await fetchFromGitHub(
       "users",
       "corscheid",
       PROJECTS_INCLUDE.corscheid,
+    );
+    corscheidRepos.sort((a, b) =>
+      compareProjectIndex(a, b, PROJECTS_INCLUDE.corscheid),
     );
     corscheidRepos.forEach((repo) => {
       repo.image_url = getImageURL(repo);
@@ -69,20 +92,14 @@ export async function getRepositories() {
       "tirea",
       PROJECTS_INCLUDE.tirea,
     );
+    tireaRepos.sort((a, b) =>
+      compareProjectIndex(a, b, PROJECTS_INCLUDE.tirea),
+    );
     tireaRepos.forEach((repo) => {
       repo.image_url = getImageURL(repo);
       const { html_url, name, created_at, image_url, description } = repo;
       repositories.push({ html_url, name, created_at, image_url, description });
     });
-
-    fwewOrgRepos = await fetchFromGitHub("orgs", "fwew", PROJECTS_INCLUDE.fwew);
-    fwewOrgRepos.forEach((repo) => {
-      repo.image_url = getImageURL(repo);
-      const { html_url, name, created_at, image_url, description } = repo;
-      repositories.push({ html_url, name, created_at, image_url, description });
-    });
-
-    repositories = repositories.sort((a, b) => compareProjectDates(a, b));
 
     await writeFile(PROJECTS_DATA_PATH, JSON.stringify(repositories), "utf-8");
   }
