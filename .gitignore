@@ -24,4 +24,4 @@ pnpm-debug.log*
 .idea/
 
 # generated data
-./src/content/projects.json
+src/content/projects.json
