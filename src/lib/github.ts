@@ -31,12 +31,6 @@ function compareProjectIndex(
   return aIndex < bIndex ? -1 : 1;
 }
 
-function compareProjectDates(a: GitHubRepository, b: GitHubRepository) {
-  const aDate = new Date(a.created_at);
-  const bDate = new Date(b.created_at);
-  return aDate > bDate ? -1 : 1;
-}
-
 async function fetchFromGitHub(
   endpoint: string,
   user: string,
