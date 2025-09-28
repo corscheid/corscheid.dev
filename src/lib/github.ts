@@ -81,10 +81,10 @@ export async function getRepositories() {
       },
     ];
 
-    args.forEach(async ({ endpoint, user, include }) => {
-      const repos = await fetchFromGitHub(endpoint, user, include);
+    for (let arg of args) {
+      const repos = await fetchFromGitHub(arg.endpoint, arg.user, arg.include);
       appendRepos(repositories, repos);
-    });
+    }
 
     await writeFile(PROJECTS_DATA_PATH, JSON.stringify(repositories), "utf-8");
   }
