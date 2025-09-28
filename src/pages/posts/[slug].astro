@@ -23,8 +23,15 @@ const { Content } = await render(post);
 >
   <article class="post flex flex-col gap-4 p-4 md:px-24 lg:px-48 xl:px-72">
     <div class="flex flex-col items-center gap-4">
-      <h1 class="text-2xl">{post.data.title}</h1>
-      <Image src={post.data.image.src} alt={post.data.image.alt} width={900} height={400} class="rounded" />
+      <Image
+        src={post.data.image.src}
+        alt={post.data.image.alt}
+        width={900}
+        height={400}
+        class="rounded"
+        loading="eager"
+      />
+      <h1 class="text-4xl text-green-400">{post.data.title}</h1>
     </div>
     <Content />
   </article>
@@ -36,7 +43,12 @@ const { Content } = await render(post);
     border-radius: 0.5rem;
   }
   article.post h2 {
+    font-size: 1.5rem;
+    color: var(--color-blue-400);
+  }
+  article.post h3 {
     font-size: 1.25rem;
+    color: var(--color-blue-400);
   }
   article.post h2 + ul,
   article.post ul ul {
@@ -44,6 +56,12 @@ const { Content } = await render(post);
   }
   article.post h2 + ul li a,
   article.post ul + ul li a {
-    color: hsl(120, 100%, 45%);
+    color: var(--color-green-400);
+  }
+  article.post ul {
+    list-style: disc;
+  }
+  article.post ul li {
+    margin-left: 1rem;
   }
 </style>
