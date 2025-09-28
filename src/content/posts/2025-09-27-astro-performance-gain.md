@@ -3,7 +3,7 @@ title: "Switching to Astro for a Solid Performance Gain"
 slug: "astro-performance-gain"
 date: "2025-09-27T18:57:15.914Z"
 description: "My experience and findings upon a scratch rewrite of this previously Next.js website in Astro"
-tags: ["astro"]
+tags: ["astro", "next.js"]
 image:
   src: "/images/astro.svg"
   alt: "Astro"
@@ -16,7 +16,7 @@ published: false
 
 ### Output
 
-Next/React output
+Next.js/React output
 
 - 1x HTML page (28.97kB, 7.83kB transferred)
 - 3x CSS files (13.6kB, 6.88kB transferred)
@@ -26,13 +26,15 @@ Next/React output
 
 Total: 416.33kB, 158.06 transferred
 
+Looking at the output, even with the App Router and React Server Components (RSCs), there are these huge data blobs in script tags on the page. The reason for this basically is Hydration. There are plenty of resources on the web about Hydration. See the React and Next.js sites for more about this.
+
 ### Performance
 
-Next/React performance
+Next/React performance is quite good. I got solid Lighthouse scores with the Next.js App Router. During the Pages Router and getStaticProps/getServerSideProps era, the first visit of each page took a second and then all subsequent visits were fast. With App Router this was not nearly as noticeable. All in all the site is lightweight and fast.
 
 ## Astro.js
 
-[Astro](https://astro.build) is a static site generation framework with superpowers and integrations. The idea is to generate a site using TypeScript JSX in server side templates. Zero JavaScript is sent to the client by default. Less JavaScript means less work for the browser and a faster site.
+[Astro](https://astro.build) is a server-first web framework that ships zero JavaScript by default, operating as a Static Site Generator unless a server adapter is installed for on-demand server-side rendering of pages. The idea is to generate a site using TypeScript and Astro components with JSX-like templates. Less JavaScript means less work for the browser and a *much* faster site. Small scripts can be bundled and shipped if necessary. Not only that, libraries and frameworks like React, Preact, Svelte, Vue, Angular, Solid, etc. are supported.
 
 ### Output
 
@@ -45,7 +47,7 @@ Astro output
 
 Total: 81.81kB, 26.67kB transferred
 
-Note: This is approximately an 80% reduction in total content shipped! 100% Reduction in JavaScript!
+Note: This is approximately an 80% reduction in total content shipped! And 100% Reduction in JavaScript!
 
 ### Performance
 
