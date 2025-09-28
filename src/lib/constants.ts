@@ -1,26 +1,17 @@
-/* Layout */
-export const META_DESCRIPTION =
-  "Hi, I'm Corey and I'm a Junior Full Stack Web Developer in the Saint Louis, Missouri area.";
-
-/* Header */
-export const NAME = "Corey Scheideman";
-export const TAGLINE = "Homebrewed Dev";
-
-/* Navigation */
-export const HOME = "Home";
-export const BLOG = "Blog";
-export const PROJECTS = "Projects";
-export const CONTACT = "Contact";
+/* Logo */
+export const DOMAIN = "corscheid.dev";
 
 /* Projects */
-export const DUMMY_IMG_WIDTH = 1188;
-export const DUMMY_IMG_HEIGHT = 792;
 const DUMMY_IMG_DOMAIN = "dummyimage.com";
+const DUMMY_IMG_WIDTH = 1188;
+const DUMMY_IMG_HEIGHT = 792;
 const DUMMY_IMG_SIZE = `${DUMMY_IMG_WIDTH}x${DUMMY_IMG_HEIGHT}`;
 const DUMMY_IMG_BG_COLOR = "282C34";
 const DUMMY_IMG_TXT_COLOR = "eee";
 export const DUMMY_IMG_URL = `https://${DUMMY_IMG_DOMAIN}/${DUMMY_IMG_SIZE}/${DUMMY_IMG_BG_COLOR}/${DUMMY_IMG_TXT_COLOR}`;
+
 export const PROJECTS_DATA_PATH = "./src/content/projects.json";
+
 export const PROJECTS_INCLUDE = {
   corscheid: [
     "fwew-react",
@@ -39,15 +30,8 @@ export const PROJECTS_INCLUDE = {
   fwew: ["fwew", "fwew-api", "fwew-lib"],
 };
 
-/* Contact */
-export const EMAIL_URL = "mailto:corscheid@gmail.com";
-
 /* Footer */
 export const DEV_URL = "https://dev.to/corscheid";
-export const KEYBASE_URL = "https://keybase.io/corscheid";
 export const TWITTER_URL = "https://twitter.com/corscheid";
 export const GITHUB_URL = "https://github.com/corscheid";
 export const LINKEDIN_URL = "https://linkedin.com/in/corscheid";
-export const FACEBOOK_URL = "https://facebook.com/corscheid";
-export const DOMAIN = "corscheid.dev";
-export const REPO_URL = `${GITHUB_URL}/${DOMAIN}`;

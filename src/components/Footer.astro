@@ -1,16 +1,20 @@
+---
+import { DEV_URL, GITHUB_URL, LINKEDIN_URL, TWITTER_URL } from "../lib/constants";
+---
+
 <footer class="bg-gray-800 p-8 text-gray-100">
   <ul class="flex justify-center gap-8">
     <li>
-      <a class="text-md hover:text-blue-400" href="https://github.com/corscheid">GitHub</a>
+      <a class="text-md hover:text-blue-400" href={GITHUB_URL}>GitHub</a>
     </li>
     <li>
-      <a class="text-md hover:text-blue-400" href="https://linkedin.com/in/corscheid">LinkedIn</a>
+      <a class="text-md hover:text-blue-400" href={LINKEDIN_URL}>LinkedIn</a>
     </li>
     <li>
-      <a class="text-md hover:text-blue-400" href="https://twitter.com/corscheid">Twitter</a>
+      <a class="text-md hover:text-blue-400" href={TWITTER_URL}>Twitter</a>
     </li>
     <li>
-      <a class="text-md hover:text-blue-400" href="https://dev.to/corscheid">DEV.to</a>
+      <a class="text-md hover:text-blue-400" href={DEV_URL}>DEV.to</a>
     </li>
   </ul>
 </footer>
