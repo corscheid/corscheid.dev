@@ -30,7 +30,7 @@ if (Astro.request.method === "POST") {
       errors.email += "Email is not valid. ";
       isSuccess = false;
     }
-    if (typeof message !== "string" || message.length < 1) {
+    if (typeof message !== "string" || message.length < 5) {
       errors.message += "Please enter a message";
       isSuccess = false;
     }
@@ -53,17 +53,17 @@ if (Astro.request.method === "POST") {
     <form method="POST" class="flex w-full flex-col gap-4 sm:w-96">
       <label class="flex flex-col gap-2">
         name
-        <input type="text" name="name" class="rounded-md bg-neutral-800 p-2" />
+        <input type="text" name="name" class="rounded-md bg-neutral-800 p-2" required />
       </label>
       {errors.name && <p>{errors.name}</p>}
       <label class="flex flex-col gap-2">
         email
-        <input type="email" name="email" class="rounded-md bg-neutral-800 p-2" />
+        <input type="email" name="email" class="rounded-md bg-neutral-800 p-2" required />
       </label>
       {errors.email && <p>{errors.email}</p>}
       <label class="flex flex-col gap-2">
         message
-        <textarea name="message" rows={5} class="rounded-md bg-neutral-800 p-2"></textarea>
+        <textarea name="message" rows={5} class="rounded-md bg-neutral-800 p-2" required minlength="5"></textarea>
       </label>
       {errors.message && <p>{errors.message}</p>}
       <button type="submit" class="rounded bg-blue-400 p-2 text-gray-800">submit</button>
