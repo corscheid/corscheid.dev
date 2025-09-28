@@ -39,60 +39,51 @@ async function fetchFromGitHub(
   const response = await fetch(
     `https://api.github.com/${endpoint}/${user}/repos`,
   );
-  const repositories = (await response.json()) as GitHubRepository[];
-  return repositories.filter((repository) =>
-    includeList.includes(repository.name),
-  );
+  let repositories = (await response.json()) as GitHubRepository[];
+  return repositories
+    .filter((repository) => includeList.includes(repository.name))
+    .sort((a, b) => compareProjectIndex(a, b, includeList));
+}
+
+function appendRepos(
+  mainRepos: GitHubRepository[],
+  currentRepos: GitHubRepository[],
+) {
+  currentRepos.forEach((repo) => {
+    repo.image_url = getImageURL(repo);
+    const { html_url, name, created_at, image_url, description } = repo;
+    mainRepos.push({ html_url, name, created_at, image_url, description });
+  });
 }
 
 export async function getRepositories() {
-  let repositories: GitHubRepository[];
-  let corscheidRepos: GitHubRepository[];
-  let tireaRepos: GitHubRepository[];
-  let fwewOrgRepos: GitHubRepository[];
+  let repositories: GitHubRepository[] = [];
 
   if (existsSync(PROJECTS_DATA_PATH)) {
     const json = await readFile(PROJECTS_DATA_PATH, "utf8");
     repositories = JSON.parse(json) as GitHubRepository[];
   } else {
-    repositories = [];
+    const args = [
+      {
+        endpoint: "orgs",
+        user: "fwew",
+        include: PROJECTS_INCLUDE.fwew,
+      },
+      {
+        endpoint: "users",
+        user: "corscheid",
+        include: PROJECTS_INCLUDE.corscheid,
+      },
+      {
+        endpoint: "users",
+        user: "tirea",
+        include: PROJECTS_INCLUDE.tirea,
+      },
+    ];
 
-    fwewOrgRepos = await fetchFromGitHub("orgs", "fwew", PROJECTS_INCLUDE.fwew);
-    fwewOrgRepos.sort((a, b) =>
-      compareProjectIndex(a, b, PROJECTS_INCLUDE.fwew),
-    );
-    fwewOrgRepos.forEach((repo) => {
-      repo.image_url = getImageURL(repo);
-      const { html_url, name, created_at, image_url, description } = repo;
-      repositories.push({ html_url, name, created_at, image_url, description });
-    });
-
-    corscheidRepos = await fetchFromGitHub(
-      "users",
-      "corscheid",
-      PROJECTS_INCLUDE.corscheid,
-    );
-    corscheidRepos.sort((a, b) =>
-      compareProjectIndex(a, b, PROJECTS_INCLUDE.corscheid),
-    );
-    corscheidRepos.forEach((repo) => {
-      repo.image_url = getImageURL(repo);
-      const { html_url, name, created_at, image_url, description } = repo;
-      repositories.push({ html_url, name, created_at, image_url, description });
-    });
-
-    tireaRepos = await fetchFromGitHub(
-      "users",
-      "tirea",
-      PROJECTS_INCLUDE.tirea,
-    );
-    tireaRepos.sort((a, b) =>
-      compareProjectIndex(a, b, PROJECTS_INCLUDE.tirea),
-    );
-    tireaRepos.forEach((repo) => {
-      repo.image_url = getImageURL(repo);
-      const { html_url, name, created_at, image_url, description } = repo;
-      repositories.push({ html_url, name, created_at, image_url, description });
+    args.forEach(async ({ endpoint, user, include }) => {
+      const repos = await fetchFromGitHub(endpoint, user, include);
+      appendRepos(repositories, repos);
     });
 
     await writeFile(PROJECTS_DATA_PATH, JSON.stringify(repositories), "utf-8");
