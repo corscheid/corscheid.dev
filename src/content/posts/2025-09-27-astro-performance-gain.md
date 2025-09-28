@@ -1,6 +1,6 @@
 ---
 title: "Switching to Astro for a Solid Performance Gain"
-slug: "astro"
+slug: "astro-performance-gain"
 date: "2025-09-27T18:57:15.914Z"
 description: "My experience and findings upon a scratch rewrite of this previously Next.js website in Astro"
 tags: ["astro"]
