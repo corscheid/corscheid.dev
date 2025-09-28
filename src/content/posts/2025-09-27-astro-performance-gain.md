@@ -52,3 +52,7 @@ Note: This is approximately an 80% reduction in total content shipped! And 100% 
 ### Performance
 
 Astro performance
+
+## Final Thoughts
+
+Both quite fast, but Astro gives less bloat.
