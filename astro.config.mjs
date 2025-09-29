@@ -1,5 +1,4 @@
 // @ts-check
-import vercel from '@astrojs/vercel';
 import playformCompress from '@playform/compress';
 import tailwindcss from '@tailwindcss/vite';
 import compressor from 'astro-compressor';
@@ -26,6 +25,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
-  adapter: vercel(),
 });
