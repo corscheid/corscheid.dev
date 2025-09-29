@@ -8,16 +8,14 @@ interface Props {
   title: string;
   url: string;
   description: string | null;
-  _class?: string;
-  dataId?: string;
 }
 
-const { imgSrc, imgAlt, imgPriority, title, url, description, _class, dataId }: Props = Astro.props;
+const { imgSrc, imgAlt, imgPriority, title, url, description }: Props = Astro.props;
 ---
 
-<div
-  class={`${_class ?? ""} flex h-96 w-full cursor-pointer flex-col rounded-2xl bg-gray-700 pb-4 sm:w-96 hover:shadow-2xl hover:scale-105 transition-all ease-in-out`}
-  data-id={dataId}
+<a
+  href={url}
+  class="flex h-96 w-full cursor-pointer flex-col rounded-2xl bg-gray-700 pb-4 transition-all ease-in-out hover:scale-105 hover:shadow-2xl sm:w-96"
 >
   <Image
     src={imgSrc}
@@ -29,9 +27,7 @@ const { imgSrc, imgAlt, imgPriority, title, url, description, _class, dataId }: 
     loading={imgPriority ? "eager" : "lazy"}
   />
   <div class="flex flex-col gap-4 p-4">
-    <a href={url} class="text-green-400">
-      <h2 class="text-2xl font-mono">{title}</h2>
-    </a>
+    <h2 class="font-mono text-2xl text-green-400">{title}</h2>
     <p>{description ?? ""}</p>
   </div>
-</div>
+</a>

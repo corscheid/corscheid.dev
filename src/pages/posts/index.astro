@@ -23,25 +23,9 @@ posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
             title={post.data.title}
             url={`/posts/${post.data.slug}`}
             description={post.data.description}
-            _class="post-card"
-            dataId={post.data.slug}
           />
         ))
       }
     </div>
   </article>
 </Layout>
-
-<script>
-  (function () {
-    const postCards = document.getElementsByClassName("post-card");
-    if (!postCards) return;
-    for (const card of postCards) {
-      card.addEventListener("click", function () {
-        const slug = card.getAttribute("data-id");
-        if (!slug) return;
-        window.location.href = `/posts/${slug}`;
-      });
-    }
-  })();
-</script>

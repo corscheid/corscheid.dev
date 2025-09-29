@@ -22,25 +22,9 @@ const projects = await getCollection("projects");
             title={project.data.name}
             url={project.data.html_url}
             description={project.data.description}
-            _class="project-card"
-            dataId={project.data.html_url}
           />
         ))
       }
     </div>
   </article>
 </Layout>
-
-<script>
-  (function () {
-    const projectCards = document.getElementsByClassName("project-card");
-    if (!projectCards) return;
-    for (const card of projectCards) {
-      card.addEventListener("click", function () {
-        const url = card.getAttribute("data-id");
-        if (!url) return;
-        window.location.href = url;
-      });
-    }
-  })();
-</script>
