@@ -1,9 +1,5 @@
 import { existsSync, promises } from "fs";
-import {
-  DUMMY_IMG_URL,
-  PROJECTS_DATA_PATH,
-  PROJECTS_INCLUDE,
-} from "./constants";
+import { DUMMY_IMG_URL, PROJECTS_DATA_PATH, PROJECTS } from "./constants";
 const { writeFile, readFile } = promises;
 
 export interface GitHubRepository {
@@ -64,21 +60,9 @@ export async function getRepositories() {
     repositories = JSON.parse(json) as GitHubRepository[];
   } else {
     const args = [
-      {
-        endpoint: "orgs",
-        user: "fwew",
-        include: PROJECTS_INCLUDE.fwew,
-      },
-      {
-        endpoint: "users",
-        user: "corscheid",
-        include: PROJECTS_INCLUDE.corscheid,
-      },
-      {
-        endpoint: "users",
-        user: "tirea",
-        include: PROJECTS_INCLUDE.tirea,
-      },
+      { endpoint: "orgs", user: "fwew", include: PROJECTS.fwew },
+      { endpoint: "users", user: "corscheid", include: PROJECTS.corscheid },
+      { endpoint: "users", user: "tirea", include: PROJECTS.tirea },
     ];
 
     for (let arg of args) {
@@ -88,5 +72,6 @@ export async function getRepositories() {
 
     await writeFile(PROJECTS_DATA_PATH, JSON.stringify(repositories), "utf-8");
   }
+
   return repositories;
 }

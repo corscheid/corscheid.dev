@@ -12,7 +12,7 @@ export const DUMMY_IMG_URL = `https://${DUMMY_IMG_DOMAIN}/${DUMMY_IMG_SIZE}/${DU
 
 export const PROJECTS_DATA_PATH = "./src/content/projects.json";
 
-export const PROJECTS_INCLUDE = {
+export const PROJECTS = {
   corscheid: [
     "fwew-react",
     "laadan-dict",
