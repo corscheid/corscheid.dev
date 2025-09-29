@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
+import Prose from "../../components/Prose.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -21,8 +22,8 @@ const { Content } = await render(post);
   title={`${post.data.title} - corscheid.dev`}
   description={`Blog Post: ${post.data.title} - ${post.data.description} - corscheid.dev - portfolio site of Corey Scheideman, web developer`}
 >
-  <article class="post flex flex-col gap-4 p-4 md:px-24 lg:px-48 xl:px-72">
-    <div class="flex flex-col items-center gap-4">
+  <article class="post mx-auto max-w-[65ch] p-4">
+    <Prose>
       <Image
         src={post.data.image.src}
         alt={post.data.image.alt}
@@ -31,40 +32,8 @@ const { Content } = await render(post);
         class="rounded"
         loading="eager"
       />
-      <h1 class="text-4xl text-green-400 font-mono">{post.data.title}</h1>
-    </div>
-    <Content />
+      <h1 class="font-mono text-4xl text-green-400">{post.data.title}</h1>
+      <Content />
+    </Prose>
   </article>
 </Layout>
-
-<style is:inline>
-  article.post pre.astro-code {
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
-  article.post h2 {
-    font-size: 1.5rem;
-    color: var(--color-blue-400);
-  }
-  article.post h3 {
-    font-size: 1.25rem;
-    color: var(--color-blue-400);
-  }
-  article.post h2 + ul,
-  article.post ul ul {
-    padding-left: 1rem;
-  }
-  article.post h2 + ul li a,
-  article.post ul + ul li a {
-    color: var(--color-green-400);
-  }
-  article.post ul {
-    list-style: disc;
-  }
-  article.post ul li {
-    margin-left: 1rem;
-  }
-  article.post a {
-    color: var(--color-green-400);
-  }
-</style>

@@ -7,7 +7,7 @@ tags: ["astro", "next.js"]
 image:
   src: "/images/astro.svg"
   alt: "Astro"
-published: false
+published: true
 ---
 
 ## Next.js
@@ -51,8 +51,8 @@ Note: This is approximately an 80% reduction in total content shipped! And 100% 
 
 ### Performance
 
-Astro performance
+Astro performance is phenominal. Because of its server-first/HTML-first, partial-hydration design. The less JS gets shipped, the faster the site/app. With compression integrations, the build output is about as minimal as I have seen in modern site generators.
 
 ## Final Thoughts
 
-Both quite fast, but Astro gives less bloat.
+Both are quite fast, but Astro gives less bloat overall than Next.js in my experience. Less initial files, less config, fewer dependencies. There are times when JavaScript makes sense, and there are times when it just seems like overkill to have everything be JavaScript. I have enjoyed working with Astro every bit as much as Next.js/React, perhaps even more so. The tradeoffs in this particular instance are relatively small for a small site, but they're measurable and in some cases noticeable. As far as usage, support, and ecosystem goes, React and Next are certainly here to stay, but Astro is a breath of fresh air.
