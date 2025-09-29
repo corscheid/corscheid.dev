@@ -1,46 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-export const prerender = false;
-
-function isValidEmail(email: string) {
-  if (!email) return false;
-  const validEmailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return validEmailPattern.test(email);
-}
-
-const errors = { name: "", email: "", message: "" };
-let isSuccess = false;
-
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("name");
-    const email = data.get("email");
-    const message = data.get("message");
-    isSuccess = true;
-
-    console.log({ name, email, message });
-
-    if (typeof name !== "string" || name.length < 1) {
-      errors.name += "Please enter a name. ";
-      isSuccess = false;
-    }
-    if (typeof email !== "string" || !isValidEmail(email)) {
-      errors.email += "Email is not valid. ";
-      isSuccess = false;
-    }
-    if (typeof message !== "string" || message.length < 5) {
-      errors.message += "Please enter a message";
-      isSuccess = false;
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-      isSuccess = false;
-    }
-  }
-}
 ---
 
 <Layout
@@ -49,23 +8,21 @@ if (Astro.request.method === "POST") {
   description="Contact form - corscheid.dev - portfolio site of Corey Scheideman, web developer"
 >
   <section class="flex flex-col items-center p-4">
-    {isSuccess && <div>Thanks for your message!</div>}
-    <form method="POST" class="flex w-full flex-col gap-4 sm:w-96">
+    <form action="https://api.web3forms.com/submit" method="POST" class="flex w-full flex-col gap-4 sm:w-96">
+      <input type="hidden" name="access_key" value="becafe83-fe28-4c9c-8c55-46d69d0228a1" />
       <label class="flex flex-col gap-2">
         name
         <input type="text" name="name" class="rounded-md bg-neutral-800 p-2" required />
       </label>
-      {errors.name && <p>{errors.name}</p>}
       <label class="flex flex-col gap-2">
         email
         <input type="email" name="email" class="rounded-md bg-neutral-800 p-2" required />
       </label>
-      {errors.email && <p>{errors.email}</p>}
       <label class="flex flex-col gap-2">
         message
         <textarea name="message" rows={5} class="rounded-md bg-neutral-800 p-2" required minlength="5"></textarea>
       </label>
-      {errors.message && <p>{errors.message}</p>}
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
       <button type="submit" class="rounded bg-blue-400 p-2 text-gray-800">submit</button>
     </form>
   </section>
