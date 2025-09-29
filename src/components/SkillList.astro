@@ -1,0 +1,25 @@
+---
+import type { SvgComponent } from "astro/types";
+import SkillListItem from "./SkillListItem.astro";
+
+interface Props {
+  items: {
+    url: string;
+    Icon: SvgComponent;
+    label: string;
+  }[];
+}
+
+const { items }: Props = Astro.props;
+---
+
+<ul class="m-0 flex flex-wrap justify-center gap-4 lg:justify-start">
+  {
+    items.map((item) => (
+      <SkillListItem href={item.url}>
+        <item.Icon aria-label={item.label} width={48} height={48} slot="icon" />
+        {item.label}
+      </SkillListItem>
+    ))
+  }
+</ul>

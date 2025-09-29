@@ -17,8 +17,36 @@ import React from "../assets/react.svg";
 import SpringBoot from "../assets/spring-boot.svg";
 import Svelte from "../assets/svelte.svg";
 import Tailwind from "../assets/tailwind.svg";
-import SkillListItem from "../components/SkillListItem.astro";
+import SkillList from "../components/SkillList.astro";
 import Layout from "../layouts/Layout.astro";
+
+const skillsFrontend = [
+  { url: "https://react.dev", Icon: React, label: "React" },
+  { url: "https://reactnative.dev", Icon: React, label: "React Native" },
+  { url: "https://angular.dev", Icon: Angular, label: "Angular" },
+  { url: "https://svelte.dev", Icon: Svelte, label: "Svelte" },
+  { url: "https://qwik.dev", Icon: Qwik, label: "Qwik" },
+  { url: "https://tailwindcss.com", Icon: Tailwind, label: "Tailwind CSS" },
+];
+
+const skillsBackend = [
+  { url: "https://go.dev", Icon: Go, label: "Go" },
+  { url: "https://dev.java", Icon: Java, label: "Java" },
+  { url: "https://python.org", Icon: Python, label: "Python" },
+  { url: "https://spring.io/projects/spring-boot", Icon: SpringBoot, label: "Spring Boot" },
+  { url: "https://nodejs.org/en", Icon: NodeJS, label: "Node.js" },
+  { url: "https://nextjs.org", Icon: NextJs, label: "Next.js" },
+  { url: "https://svelte.dev", Icon: Svelte, label: "SvelteKit" },
+  { url: "https://qwik.dev", Icon: Qwik, label: "Qwik City" },
+  { url: "https://astro.build", Icon: AstroLogo, label: "Astro" },
+];
+
+const skillsContainerCICD = [
+  { url: "https://www.docker.com", Icon: Docker, label: "Docker" },
+  { url: "https://podman.io", Icon: Podman, label: "Podman" },
+  { url: "https://docs.github.com/en/actions", Icon: GitHub, label: "GitHub" },
+  { url: "https://docs.gitlab.com/ci", Icon: GitLab, label: "GitLab" },
+];
 ---
 
 <Layout title="Home - corscheid.dev" description="corscheid.dev - portfolio site of Corey Scheideman, web developer">
@@ -48,99 +76,17 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="flex flex-col gap-4 bg-gray-700 p-4 lg:px-64 lg:py-32">
       <h2 class="mb-4 p-0 font-mono text-xl">Frontend</h2>
-
-      <ul class="m-0 flex flex-wrap justify-center gap-4 lg:justify-start">
-        <SkillListItem href="https://react.dev">
-          <React aria-label="React" width={48} height={48} slot="icon" />
-          React
-        </SkillListItem>
-        <SkillListItem href="https://reactnative.dev">
-          <React aria-label="React" width={48} height={48} slot="icon" />
-          React Native
-        </SkillListItem>
-        <SkillListItem href="https://angular.dev">
-          <Angular arial-label="Angular" width={48} height={48} slot="icon" />
-          Angular
-        </SkillListItem>
-        <SkillListItem href="https://svelte.dev">
-          <Svelte aria-label="Svelte" width={48} height={48} slot="icon" />
-          Svelte
-        </SkillListItem>
-        <SkillListItem href="https://qwik.dev">
-          <Qwik aria-label="Qwik" width={48} height={48} slot="icon" />
-          Qwik
-        </SkillListItem>
-        <SkillListItem href="https://tailwindcss.com">
-          <Tailwind aria-label="Tailwind CSS" width={48} height={48} slot="icon" />
-          Tailwind CSS
-        </SkillListItem>
-      </ul>
+      <SkillList items={skillsFrontend} />
     </section>
 
     <section class="flex flex-col gap-4 bg-gray-600 p-4 lg:px-64 lg:py-32">
       <h2 class="mb-4 p-0 font-mono text-xl">Backend</h2>
-
-      <ul class="m-0 flex flex-wrap justify-center gap-4 lg:justify-start">
-        <SkillListItem href="https://go.dev">
-          <Go aria-label="React" width={48} height={48} slot="icon" />
-          Go
-        </SkillListItem>
-        <SkillListItem href="https://dev.java">
-          <Java aria-label="Java" width={48} height={48} slot="icon" />
-          Java
-        </SkillListItem>
-        <SkillListItem href="https://www.python.org">
-          <Python aria-label="Python" width={48} height={48} slot="icon" />
-          Python
-        </SkillListItem>
-        <SkillListItem href="https://spring.io/projects/spring-boot">
-          <SpringBoot aria-label="Spring Boot" width={48} height={48} slot="icon" />
-          Spring Boot
-        </SkillListItem>
-        <SkillListItem href="https://nodejs.org/en">
-          <NodeJS aria-label="Node.js" width={48} height={48} slot="icon" />
-          Node.js
-        </SkillListItem>
-        <SkillListItem href="https://nextjs.org">
-          <NextJs aria-label="Next.js" width={48} height={48} slot="icon" />
-          Next.js
-        </SkillListItem>
-        <SkillListItem href="https://svelte.dev/docs/kit/introduction">
-          <Svelte aria-label="Svelte" width={48} height={48} slot="icon" />
-          SvelteKit
-        </SkillListItem>
-        <SkillListItem href="https://qwik.dev/docs/qwikcity">
-          <Qwik aria-label="Qwik" width={48} height={48} slot="icon" />
-          Qwik City
-        </SkillListItem>
-        <SkillListItem href="https://astro.build">
-          <AstroLogo aria-label="Astro" width={48} height={48} slot="icon" />
-          Astro
-        </SkillListItem>
-      </ul>
+      <SkillList items={skillsBackend} />
     </section>
 
     <section class="flex flex-col gap-4 bg-gray-700 p-4 lg:px-64 lg:py-32">
       <h2 class="mb-4 p-0 font-mono text-xl">Containerization & CI/CD</h2>
-
-      <ul class="m-0 flex flex-wrap justify-center gap-4 lg:justify-start">
-        <SkillListItem href="https://www.docker.com">
-          <Docker aria-label="Docker" width={48} height={48} slot="icon" />
-          Docker
-        </SkillListItem>
-        <SkillListItem href="https://podman.io">
-          <Podman aria-label="Podman" width={48} height={48} slot="icon" />
-          Podman
-        </SkillListItem>
-        <SkillListItem href="https://docs.github.com/en/actions">
-          <GitHub aria-label="GitHub" width={48} height={48} slot="icon" />
-          GitHub
-        </SkillListItem>
-        <SkillListItem href="https://docs.gitlab.com/ci">
-          <GitLab aria-label="GitLab" width={48} height={48} slot="icon" />
-          GitLab
-        </SkillListItem>
-      </ul>
+      <SkillList items={skillsContainerCICD} />
     </section>
   </article>
 </Layout>
