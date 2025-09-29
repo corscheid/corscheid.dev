@@ -10,6 +10,12 @@ export interface GitHubRepository {
   image_url: string;
 }
 
+/**
+ * Get image URL for a GitHub Repository
+ *
+ * @param {GitHubRepository} repo GitHub Repository object
+ * @returns {string} URL of image for repo
+ */
 function getImageURL(repo: GitHubRepository) {
   if (existsSync(`public/images/${repo.name}.png`)) {
     return `/images/${repo.name}.png`;
@@ -17,6 +23,14 @@ function getImageURL(repo: GitHubRepository) {
   return `${DUMMY_IMG_URL}/?text=${repo.name}`;
 }
 
+/**
+ * Sort function for GitHub Repositories according to their position in the include list by name.
+ *
+ * @param {GitHubRepository} a first GitHub Repository
+ * @param {GitHubRepository} b second GitHub Repository
+ * @param {string[]} includeList list of GitHub Repository names
+ * @returns {number} -1 when a should come first, otherwise 1
+ */
 function compareProjectIndex(
   a: GitHubRepository,
   b: GitHubRepository,
@@ -27,6 +41,14 @@ function compareProjectIndex(
   return aIndex < bIndex ? -1 : 1;
 }
 
+/**
+ * Fetcher function to get all GitHub repositories by an Org or User
+ *
+ * @param {string} endpoint "orgs" | "users"
+ * @param {string} user GitHub username
+ * @param {string[]} includeList array of GitHub repository names to consider/include
+ * @returns {Promise<GitHubRepository[]>} GitHub Repository array
+ */
 async function fetchFromGitHub(
   endpoint: string,
   user: string,
@@ -41,6 +63,12 @@ async function fetchFromGitHub(
     .sort((a, b) => compareProjectIndex(a, b, includeList));
 }
 
+/**
+ * Append currentRepos to mainRepos after setting image property
+ *
+ * @param {GitHubRepository[]} mainRepos main array of GitHub Repositories
+ * @param {GitHubRepository[]} currentRepos current array of GitHub Repositories to append
+ */
 function appendRepos(
   mainRepos: GitHubRepository[],
   currentRepos: GitHubRepository[],
@@ -52,6 +80,12 @@ function appendRepos(
   });
 }
 
+/**
+ * Main function to get all curated GitHub Repositories by either reading the
+ * JSON file from disk or fetching from GitHub to create the file
+ *
+ * @returns {Promise<GitHubRepository[]>} Final Array of GitHub Repositories
+ */
 export async function getRepositories() {
   let repositories: GitHubRepository[] = [];
 
