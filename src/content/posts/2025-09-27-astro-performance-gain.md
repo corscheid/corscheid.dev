@@ -26,7 +26,7 @@ Next.js/React output
 
 Total: 416.33kB, 158.06 transferred
 
-Looking at the output, even with the App Router and React Server Components (RSCs), there are these huge data blobs in script tags on the page. The reason for this basically is Hydration. There are plenty of resources on the web about Hydration. See the React and Next.js sites for more about this.
+Looking at the output, even with the App Router and React Server Components (RSCs), there are several huge data blobs in script tags on the page. The reason for this basically is Hydration. There are plenty of resources on the web about Hydration. See the React and Next.js sites for more about this.
 
 ### Performance
 
@@ -34,7 +34,7 @@ Next/React performance is quite good. I got solid Lighthouse scores with the Nex
 
 ## Astro.js
 
-[Astro](https://astro.build) is a server-first web framework that ships zero JavaScript by default, operating as a Static Site Generator unless a server adapter is installed for on-demand server-side rendering of pages. The idea is to generate a site using TypeScript and Astro components with JSX-like templates. Less JavaScript means less work for the browser and a *much* faster site. Small scripts can be bundled and shipped if necessary. Not only that, libraries and frameworks like React, Preact, Svelte, Vue, Angular, Solid, etc. are supported.
+[Astro](https://astro.build) is a server-first web framework that ships zero JavaScript by default, operating as a Static Site Generator unless a server adapter is installed for on-demand server-side rendering of pages. The idea is to generate a site using TypeScript and Astro components with JSX-like templates. Less JavaScript means less work for the browser and a _much_ faster site. Small scripts can be bundled and shipped if necessary. Not only that, libraries and frameworks like React, Preact, Svelte, Vue, Angular, Solid, etc. are supported.
 
 ### Output
 
