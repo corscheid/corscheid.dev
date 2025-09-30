@@ -16,7 +16,7 @@ export interface GitHubRepository {
  * @param {GitHubRepository} repo GitHub Repository object
  * @returns {string} URL of image for repo
  */
-function getImageURL(repo: GitHubRepository) {
+function getImageURL(repo: GitHubRepository): string {
   if (existsSync(`public/images/${repo.name}.png`)) {
     return `/images/${repo.name}.png`;
   }
@@ -35,7 +35,7 @@ function compareProjectIndex(
   a: GitHubRepository,
   b: GitHubRepository,
   includeList: string[],
-) {
+): number {
   const aIndex = includeList.indexOf(a.name);
   const bIndex = includeList.indexOf(b.name);
   return aIndex < bIndex ? -1 : 1;
@@ -53,7 +53,7 @@ async function fetchFromGitHub(
   endpoint: string,
   user: string,
   includeList: string[],
-) {
+): Promise<GitHubRepository[]> {
   const response = await fetch(
     `https://api.github.com/${endpoint}/${user}/repos`,
   );
@@ -72,7 +72,7 @@ async function fetchFromGitHub(
 function appendRepos(
   mainRepos: GitHubRepository[],
   currentRepos: GitHubRepository[],
-) {
+): void {
   currentRepos.forEach((repo) => {
     repo.image_url = getImageURL(repo);
     const { html_url, name, created_at, image_url, description } = repo;
@@ -86,7 +86,7 @@ function appendRepos(
  *
  * @returns {Promise<GitHubRepository[]>} Final Array of GitHub Repositories
  */
-export async function getRepositories() {
+export async function getRepositories(): Promise<GitHubRepository[]> {
   let repositories: GitHubRepository[] = [];
 
   if (existsSync(PROJECTS_DATA_PATH)) {
